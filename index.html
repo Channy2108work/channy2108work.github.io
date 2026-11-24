@@ -1,0 +1,753 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyễn Kim Trang (Channy) | Portfolio chiến dịch truyền thông</title>
+<meta name="description" content="Portfolio của Nguyễn Kim Trang: điều phối dự án quảng cáo, chiến dịch IMC, KOL và báo chí.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#5E0F1C; --maroon-deep:#450A14; --frame:#141012;
+    --paper:#FFFFFF; --blush:#F7ECEC; --ink:#2B2326; --muted:#7A6A6D; --line:#EADCDD;
+    --marker:#F2C230; --marker-soft:#FFF3C4; --link:#5E0F1C;
+    --display:"Anton","Be Vietnam Pro",Impact,sans-serif;
+    --script:"Great Vibes","Brush Script MT",cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--frame);color:var(--ink);line-height:1.6;font-size:16.5px;padding:14px}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--marker);outline-offset:3px}
+  .narrow{max-width:68ch}
+
+  /* Khung panel như bảng ghim */
+  .on-maroon{background:var(--maroon)!important;color:#fff}
+  .on-maroon::after{color:#fff!important}
+
+  .todo{background:var(--marker-soft);border:1.5px dashed var(--marker);border-radius:6px;padding:1px 8px;font-size:.88em;color:#6B5200}
+
+  /* Nút */
+  .contact{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:10px 20px;border-radius:999px;border:1.5px solid var(--maroon);color:var(--maroon);text-decoration:none;font-weight:600;background:transparent}
+  .btn.primary{background:var(--maroon);color:#fff}
+  .on-maroon .btn{border-color:#fff;color:#fff}
+  .on-maroon .btn.primary{background:#fff;color:var(--maroon)}
+
+  /* Đầu trang */
+  .topnav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-weight:800;letter-spacing:.06em;color:var(--maroon);text-decoration:none;text-transform:uppercase}
+  .links{display:flex;gap:clamp(14px,4vw,48px)}
+  .links a{color:var(--maroon);text-decoration:none;font-weight:600;letter-spacing:.04em}
+  .links a:hover{text-decoration:underline}
+  .hero{position:relative;text-align:center;padding-top:28px;--ns:clamp(2.7rem,10.6vw,9.6rem)}
+  .bigname{font-family:var(--display);font-weight:400;font-size:var(--ns);line-height:1.12;color:var(--maroon);text-transform:uppercase;white-space:nowrap;letter-spacing:-.005em;position:relative;z-index:1;margin-top:clamp(24px,4vw,48px)}
+  .hero-mid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;margin-top:calc(var(--ns) * -.55)}
+  .tagline{text-align:left;max-width:16ch;color:var(--maroon);font-weight:500;line-height:1.35;font-size:1.05rem;justify-self:start;margin-top:calc(var(--ns) * .55)}
+  .tagline .num{display:block;font-family:var(--display);font-size:3.6rem;line-height:1.05;font-weight:400;white-space:nowrap}
+  .pic{position:relative;z-index:2}
+  .portrait{width:min(400px,72vw);margin:0 auto}
+  .portrait img{display:block;width:100%;height:auto}
+  .script{font-family:var(--script);color:var(--maroon);font-size:clamp(3.4rem,8vw,6.4rem);line-height:1;position:absolute;left:50%;bottom:-.12em;transform:translateX(-50%) rotate(-6deg);white-space:nowrap;z-index:3}
+  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:0;border-top:1px solid var(--line);padding-top:20px}
+  .hero-foot .mail{color:var(--maroon);font-weight:600;letter-spacing:.03em;text-decoration:none}
+
+  /* Tiêu đề các phần */
+  h2.sec{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;color:var(--maroon);margin-bottom:10px}
+  .on-maroon h2.sec{color:#fff}
+  .sec-intro{color:var(--muted);margin-bottom:28px}
+
+  /* Về tôi */
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start;margin-top:18px}
+  .story{min-height:300px}
+  .story-kicker{color:rgba(255,255,255,.7);font-size:.9rem;font-weight:600;margin-bottom:6px}
+  .story h3{font-size:1.45rem;font-weight:800;line-height:1.25;margin-bottom:14px}
+  .story .p{margin-bottom:12px}
+  .story ul.plain{padding-left:20px;margin-top:6px}
+  .story-body-in{animation:fadein .35s ease both}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .story-reset{margin-top:6px;background:none;border:0;color:#fff;font:inherit;font-weight:600;cursor:pointer;padding:0;text-decoration:underline}
+  .plan{background:var(--paper);color:var(--ink);border-radius:20px;padding:22px 22px 14px}
+  .plan-hint{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+  .years{position:relative;height:22px;margin-left:150px;margin-right:8px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+  .years span{position:absolute;transform:translateX(-50%)}
+  
+  .row{display:flex;align-items:center;width:100%;min-height:58px;padding:8px 0;border:0;border-bottom:1px solid var(--line);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:10px}
+  .row:hover{background:var(--blush)}
+  .row[aria-pressed="true"]{background:var(--blush)}
+  .row .label{width:150px;flex:none;padding:0 14px 0 10px;font-size:.92rem;line-height:1.35;font-weight:600}
+  .row .label small{display:block;color:var(--muted);font-weight:400}
+  .track{position:relative;flex:1;height:24px;margin-right:8px;background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 1px),var(--line) calc(20% - 1px) 20%)}
+  .bar{position:absolute;top:0;height:100%;background:var(--maroon);opacity:.25;border-radius:6px;transition:opacity .2s}
+  .row:hover .bar,.row[aria-pressed="true"] .bar{opacity:1}
+  .bar.unknown,.bar.future{background:transparent;border:2px dashed var(--maroon)}
+  .inline-story{display:none}
+  ul.plain{padding-left:20px;margin-top:6px}
+  .clients{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:6px}
+  .clients b{flex-basis:100%;font-size:.9rem;font-weight:600;opacity:.75}
+  .chip{font-size:.82rem;padding:3px 10px;border-radius:999px;background:var(--blush);border:1px solid var(--line);color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip-btn{font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;background:#fff;color:var(--maroon);border:1.5px solid #fff;padding:5px 14px}
+  .chip-btn:hover{background:transparent;color:#fff}
+
+  /* Case IMC */
+  .case{background:var(--paper);border:1px solid var(--line);border-radius:20px;margin-bottom:24px;overflow:hidden}
+  .case-head{padding:26px 28px 18px;border-bottom:1px solid var(--line);background:var(--blush)}
+  .case-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:2rem;line-height:1.1;color:var(--maroon)}
+  .meta{color:var(--muted);font-size:.95rem;margin-top:4px}
+  .brief{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(--line)}
+  .brief div{padding:18px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .brief div:nth-child(2n){border-right:0}
+  .brief div:nth-last-child(-n+2){border-bottom:0}
+  .brief h4,.phases h4,.role h4,.result h4{font-size:.85rem;font-weight:600;color:var(--maroon);margin-bottom:4px}
+  .phases{padding:22px 28px}
+  .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+  .phase{border:1px solid var(--line);border-radius:14px;padding:16px}
+  .phase strong{display:block;margin-bottom:8px}
+  .phase strong em{font-style:normal;display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:var(--maroon);color:#fff;font-size:.8rem;margin-right:8px}
+  .role,.result{padding:18px 28px;border-top:1px solid var(--line)}
+  .role ul{padding-left:20px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:4px 28px 26px}
+  .thumb{aspect-ratio:4/3;border:1.5px dashed var(--marker);background:var(--marker-soft);border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;color:#6B5200;padding:8px}
+
+  /* Case ngắn */
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .mini{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px;color:var(--ink)}
+  .mini h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.6rem;color:var(--maroon);margin-bottom:2px}
+  .mini .tag{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+  .mini p{margin-bottom:10px}
+
+  /* Báo chí */
+  .press{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+  .facts{background:var(--paper);border:1px solid var(--line);border-radius:20px}
+  .facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border-bottom:0}
+  .facts dt{color:var(--muted)}
+  .facts dd{font-weight:600;text-align:right}
+  .logos{display:flex;flex-wrap:wrap;gap:8px}
+  .logos span{padding:8px 14px;border-radius:999px;background:var(--blush);color:var(--maroon);font-weight:600;font-size:.92rem}
+
+  /* Ô chi tiết khách hàng */
+  dialog.case-modal{border:0;border-radius:22px;padding:0;max-width:780px;width:calc(100% - 32px);max-height:88vh;color:var(--ink);background:var(--paper);box-shadow:0 24px 60px rgba(20,16,18,.4);margin:auto}
+  dialog.case-modal::backdrop{background:rgba(20,16,18,.7)}
+  .cm-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:24px 28px 18px;position:sticky;top:0;background:var(--maroon);color:#fff;z-index:1}
+  .cm-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:2.3rem;line-height:1.05}
+  .cm-head p{color:rgba(255,255,255,.78);margin-top:4px}
+  .cm-close{flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:transparent;font-size:1.3rem;cursor:pointer;color:#fff}
+  .cm-body{padding:22px 28px 28px}
+  .cm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+  .cm-stats div{background:var(--blush);border-radius:14px;padding:12px 14px}
+  .cm-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1.1;color:var(--maroon)}
+  .cm-stats span{font-size:.85rem;color:var(--muted)}
+  .cm-stats.deliv{grid-template-columns:repeat(3,1fr)}
+  .cm-stats.deliv b{font-family:"Be Vietnam Pro",sans-serif;font-weight:700;font-size:1.02rem;line-height:1.3}
+  .cm-stats:has(> div:nth-child(2):last-child){grid-template-columns:repeat(2,1fr);max-width:380px}
+  .cm-block{margin-bottom:18px}
+  .cm-block h4{font-size:.9rem;font-weight:700;color:var(--maroon);margin-bottom:4px}
+  .cm-block ul{padding-left:20px}
+  .cm-shots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+  .cm-shots.one{grid-template-columns:1fr}
+  .cm-shots.narrow{max-width:420px}
+  .cm-shots.two{grid-template-columns:1fr 1fr;align-items:center}
+  .cm-shots img{width:100%;height:auto;border-radius:14px;display:block}
+
+  /* Liên hệ */
+  footer.wrap h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;margin-bottom:12px}
+
+  @media (max-width:760px){
+    body{font-size:16px;padding:8px}
+    .links{gap:14px;font-size:.9rem}
+    .hero-mid{grid-template-columns:1fr;gap:0;margin-top:0}
+    .hero-mid > span{display:none}
+    .tagline{order:-1;max-width:none;text-align:center;justify-self:center;margin:16px 0 14px}
+    .tagline .num{display:inline;font-size:2.4rem;vertical-align:-4px;margin-right:6px}
+    .bigname{margin-top:18px}
+    .hero-foot{justify-content:center;text-align:center}
+    .about-grid{grid-template-columns:1fr}
+    .story{position:static;min-height:0}
+    .story-reset{display:none}
+    .plan{padding:16px 10px 8px}
+    .years{margin-left:8px;margin-right:8px}
+    .row{flex-wrap:wrap}
+    .row .label{width:100%;padding:0 8px 6px}
+    .track{flex:1 1 100%;margin:0 8px}
+    .inline-story{display:block;overflow:hidden;max-height:0;padding:0 10px;transition:max-height .3s ease}
+    .row[aria-pressed="true"] + .inline-story{max-height:1400px;padding:12px 10px 14px;background:var(--maroon);color:#fff;border-radius:0 0 12px 12px}
+    .inline-story .p{margin-bottom:10px;font-size:.95rem}
+    .brief{grid-template-columns:1fr}
+    .brief div{border-right:0!important;border-bottom:1px solid var(--line)!important}
+    .brief div:last-child{border-bottom:0!important}
+    .phase-grid,.mini-grid,.press{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);padding:4px 20px 22px}
+    .case-head,.phases,.role,.result,.brief div{padding-left:20px;padding-right:20px}
+    .cm-stats,.cm-shots{grid-template-columns:1fr 1fr}
+    .cm-shots.two,.cm-shots.one{grid-template-columns:1fr}
+    .cm-head,.cm-body{padding-left:20px;padding-right:20px}
+    .cm-head h3{font-size:1.9rem}
+  }
+
+  .bgroup{font-size:.82rem;font-weight:600;color:var(--muted);margin:10px 0 6px}
+  .toplist{list-style:none;padding:0!important}
+  .toplist li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+  .toplist b{color:var(--maroon)}
+  .press-prod{font-size:.9rem;opacity:.85;margin:-6px 0 18px}
+  .inds{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;border-top:1px solid rgba(255,255,255,.25)}
+  .ind{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.25);align-items:start}
+  .ind-name{font-family:var(--display);font-size:1.15rem;line-height:1.15;text-transform:uppercase}
+  .ind-name small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:.75rem;text-transform:none;opacity:.75;margin-top:2px}
+  .ind-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .ind-chips span{background:#fff;color:var(--maroon);border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:600}
+  .ind-chips .more-n{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);font-weight:500}
+  .ind-title{font-weight:700;margin:22px 0 10px}
+  .press-grid.two{grid-template-columns:1fr 1fr;max-width:560px}
+  @media (max-width:900px){.inds{grid-template-columns:1fr}}
+  @media (max-width:760px){.ind{grid-template-columns:1fr;gap:6px}}
+  .koc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .koc{margin:0}
+  .koc img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;border:2px solid var(--maroon)}
+  .koc figcaption{font-size:.75rem;color:var(--muted);line-height:1.3;margin-top:4px}
+  .koc figcaption b{display:block;color:var(--maroon);font-size:.8rem}
+  @media (max-width:760px){.koc-grid{grid-template-columns:repeat(3,1fr)}}
+  .ldp-link{display:inline-block;margin-top:22px}
+  #ky-nang{grid-area:skills}
+  .sk-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 28px}
+  .sk-list li{display:block;padding:12px 0 12px 22px;border-bottom:1px solid var(--line);font-weight:600;position:relative}
+  .sk-list li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:10px;border-radius:3px;background:var(--maroon)}
+  .sk-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .sk-chips span{background:var(--blush);color:var(--maroon);border-radius:999px;padding:2px 10px;font-size:.82rem}
+  @media (max-width:900px){.sk-list{grid-template-columns:1fr}}
+  .work[aria-pressed="true"] .img{outline:4px solid var(--maroon);outline-offset:3px}
+  .work[aria-pressed="true"] b::after{content:" ●";color:var(--maroon)}
+  .cs:first-of-type,.cs.first{border-top:0;margin-top:8px;padding-top:4px}
+  .cs.rev .cs-body{grid-template-columns:1.15fr 1fr}
+  .cs.rev .cs-text{order:2}
+  .cs-anim{animation:fadein .35s ease both}
+  .cs-text a.more{display:inline-block;text-decoration:none;margin-right:4px;margin-bottom:6px}
+  .cs-pics.two-up{grid-template-columns:1fr}
+  .cs-logos{display:flex;flex-wrap:wrap;gap:6px}
+  .cs-logos span{background:var(--blush);color:var(--maroon);border-radius:999px;padding:5px 12px;font-weight:600;font-size:.85rem}
+  @media (max-width:760px){.cs.rev .cs-body{grid-template-columns:1fr}.cs.rev .cs-text{order:0}}
+  .cs-detail .cm-stats{grid-template-columns:1fr 1fr;margin-bottom:18px}
+  .cs-detail .cm-stats.deliv{grid-template-columns:1fr}
+  .cs-detail .cm-shots,.cs-detail .cm-shots.two{grid-template-columns:1fr 1fr}
+  .cs-detail .cm-shots.one{grid-template-columns:1fr}
+  .cs-detail .koc-grid{grid-template-columns:repeat(3,1fr)}
+  .cs-detail .cm-block p,.cs-detail .cm-block li{font-size:.93rem}
+  .stickybar{position:fixed;top:10px;left:50%;transform:translate(-50%,-140%);width:min(1180px,calc(100% - 28px));z-index:50;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-radius:999px;padding:12px 28px;box-shadow:0 8px 24px rgba(20,16,18,.25);transition:transform .3s ease}
+  .stickybar.show{transform:translate(-50%,0)}
+  .stickybar .links{display:flex;gap:clamp(12px,3vw,40px)}
+  .stickybar a{color:var(--maroon);text-decoration:none;font-weight:600}
+  .stickybar .brand{font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  html{scroll-padding-top:80px}
+  @media (max-width:560px){.stickybar{padding:10px 16px;font-size:.88rem}.stickybar .brand{display:none}.stickybar .links{width:100%;justify-content:space-between}}
+  .ongoing{display:block;margin-top:8px;font-style:normal;font-weight:700;font-size:.75rem;color:var(--maroon);background:var(--blush);border-radius:999px;padding:3px 10px;width:max-content}
+  .cm-update{text-align:center;padding:28px 12px}
+  .cm-update b{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--maroon);font-size:1.8rem;margin-bottom:8px}
+  .cm-update p{color:var(--muted);max-width:42ch;margin:0 auto}
+  /* Bảng ghim */
+  .board{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    grid-template-areas:"hero hero" "about journey" "skills skills" "work case" "press press" "contact contact"}
+  .board > *{position:relative;background:var(--paper);border-radius:26px;padding:40px clamp(20px,3.4vw,44px);min-width:0}
+  .board > :not(header)::after{content:"•••";position:absolute;top:16px;right:24px;letter-spacing:2px;font-size:1.1rem;color:var(--maroon);opacity:.8}
+  .board > .on-maroon::after{color:#fff}
+  .board > header{grid-area:hero} #ve-toi{grid-area:about} #hanh-trinh{grid-area:journey}
+  #cong-viec{grid-area:work} #case-study{grid-area:case} #bao-chi{grid-area:press} #lien-he{grid-area:contact}
+  .ptitle{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,4.8vw,3.9rem);line-height:1.02;color:var(--maroon);margin-bottom:16px}
+  .on-maroon .ptitle{color:#fff}
+  .mini-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .mini-stats span{background:#fff;color:var(--maroon);border-radius:10px;padding:6px 12px;font-size:.8rem;line-height:1.25}
+  .mini-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem}
+  .logo-row{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font-weight:700;font-size:.92rem;opacity:.9}
+  .quals{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .quals span{background:#fff;color:var(--maroon);border-radius:12px;padding:8px 14px;font-size:.85rem;font-weight:600;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+  .quals-title{font-weight:700;margin-top:22px;font-size:.95rem}
+  .ed-list{list-style:none;margin-top:8px;display:grid;gap:8px}
+  .ed-list li{display:grid;grid-template-columns:130px 1fr;gap:12px;background:rgba(255,255,255,.08);border-radius:12px;padding:10px 14px}
+  .ed-time{font-size:.8rem;opacity:.75;padding-top:2px}
+  .ed-main{font-size:.85rem;opacity:.9;line-height:1.45}
+  .ed-main b{display:block;font-size:.95rem;opacity:1}
+  @media (max-width:520px){.ed-list li{grid-template-columns:1fr;gap:2px}}
+
+  /* Công việc của tôi */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  a.work{text-decoration:none}
+  .work{display:block;text-align:left;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+  .work .img{display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--maroon);border:2px solid var(--maroon)}
+  .work img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .work:hover img{transform:scale(1.04)}
+  .work .type{display:flex;align-items:center;justify-content:center;height:100%;font-family:var(--display);color:#fff;font-size:1.9rem;text-transform:uppercase;text-align:center;line-height:1.05;padding:8px}
+  .work b{display:block;margin-top:8px;font-size:.88rem;color:var(--maroon);text-transform:uppercase;letter-spacing:.02em}
+  .work small{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
+
+  /* Case study */
+  .cs-intro{color:var(--muted);margin-bottom:8px}
+  .cs{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}
+  .cs-label{display:flex;justify-content:space-between;font-weight:700;color:var(--maroon);font-size:.9rem;margin-bottom:10px;text-transform:uppercase}
+  .cs-body{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;align-items:start}
+  .cs-text{background:var(--maroon);color:#fff;border-radius:14px;padding:16px;font-size:.92rem;line-height:1.5}
+  .cs-text p{margin-bottom:8px}
+  .cs-text .more{background:#fff;color:var(--maroon);border:0;border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer;margin-top:4px}
+  .cs-pics{display:grid;gap:6px}
+  .cs-pics.four{grid-template-columns:repeat(4,1fr)}
+  .cs-pics img{width:100%;border-radius:10px;display:block;border:2px solid var(--maroon)}
+
+  /* Báo chí */
+  .press-head{position:relative}
+  .press-head .script-acc{font-family:var(--script);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;color:#fff;position:absolute;left:-6px;top:-10px;transform:rotate(-8deg);opacity:.95;z-index:1}
+  .press-head .ptitle{padding-top:34px}
+  .press-facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:18px;opacity:.9;font-size:.92rem}
+  .press-facts b{font-family:var(--display);font-weight:400;font-size:1.3rem;margin-right:4px}
+  .press-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .pcard{background:#fff;color:var(--ink);border-radius:16px;overflow:hidden;text-align:left;border:0;font:inherit;padding:0;display:flex;flex-direction:column}
+  button.pcard{cursor:pointer}
+  .pcard .top{background:var(--blush);color:var(--maroon);font-family:var(--display);font-size:1.5rem;text-transform:uppercase;padding:18px 12px;min-height:86px;display:flex;align-items:flex-end;line-height:1.05}
+  .pcard .txt{padding:10px 12px 14px;font-size:.8rem;line-height:1.45}
+  .pcard .txt b{display:block;font-size:.78rem;color:var(--maroon);text-transform:uppercase;margin-bottom:2px}
+
+  #lien-he{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+  #lien-he .ptitle{margin:0}
+
+  @media (max-width:900px){
+    .board{grid-template-columns:1fr;grid-template-areas:"hero" "about" "journey" "skills" "work" "case" "press" "contact"}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
+    .press-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    .board{gap:8px}
+    .board > *{border-radius:20px;padding:30px 18px}
+    .cs-body{grid-template-columns:1fr}
+  }
+</style>
+</head>
+<body>
+<nav class="stickybar" id="stickybar" aria-label="Điều hướng nhanh" aria-hidden="true">
+  <a class="brand" href="#">Trang Nguyễn</a>
+  <div class="links"><a href="#ve-toi">Về tôi</a><a href="#ky-nang">Kỹ năng</a><a href="#cong-viec">Dự án</a><a href="#bao-chi">Báo chí</a><a href="#lien-he">Liên hệ</a></div>
+</nav>
+<div class="board">
+<header class="panel">
+  <nav class="topnav" aria-label="Điều hướng">
+    <a class="brand" href="#">Trang Nguyễn</a>
+    <div class="links"><a href="#ve-toi">Về tôi</a><a href="#ky-nang">Kỹ năng</a><a href="#cong-viec">Dự án</a><a href="#bao-chi">Báo chí</a><a href="#lien-he">Liên hệ</a></div>
+  </nav>
+  <div class="hero">
+    <h1 class="bigname"><span class="fullname">Nguyễn Kim Trang</span></h1>
+    <div class="hero-mid">
+      <p class="tagline"><span class="num">4 năm</span>nhìn nghề qua lăng kính truyền thông</p>
+      <div class="pic">
+        <figure class="portrait"><img src="img/hero.webp" alt="Ảnh chân dung Nguyễn Kim Trang" width="900" height="978"></figure>
+        <p class="script" aria-hidden="true">Channy</p>
+      </div>
+      <span aria-hidden="true"></span>
+    </div>
+    <div class="hero-foot">
+      <a class="mail" href="mailto:channy2108.work@gmail.com">channy2108.work@gmail.com</a>
+      <div class="contact">
+        <a class="btn primary" href="mailto:channy2108.work@gmail.com">Gửi email</a>
+        <a class="btn" href="https://www.linkedin.com/in/trany/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="cv.pdf" download="CV_Nguyen_Kim_Trang.pdf">Tải CV</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="on-maroon" id="ve-toi" aria-live="polite">
+  <h2 class="ptitle">Về tôi</h2>
+  <div class="story" id="story">
+    <p class="story-kicker" id="story-kicker">Giới thiệu</p>
+    <h3 id="story-title">Xin chào, tôi là Trang</h3>
+    <div id="story-body"></div>
+    <button class="story-reset" id="story-reset" type="button" hidden>Quay lại phần giới thiệu</button>
+  </div>
+  <div class="mini-stats">
+    <span><b>4 năm</b>truyền thông quảng cáo</span>
+    <span><b>90+</b>khách hàng tại VnExpress</span>
+    <span><b>6</b>dự án trọng điểm tại agency</span>
+  </div>
+</section>
+
+<section class="on-maroon" id="hanh-trinh">
+  <h2 class="ptitle">Hành trình</h2>
+  <div class="plan" aria-label="Lộ trình nghề nghiệp">
+    <p class="plan-hint">Bấm vào từng chặng để đọc câu chuyện ở phần Về tôi</p>
+    <div class="years" aria-hidden="true">
+      <span style="left:10%">2026</span><span style="left:30%">2025</span><span style="left:50%">2024</span><span style="left:70%">2023</span><span style="left:90%">2022</span>
+    </div>
+    <div id="rows"></div>
+  </div>
+  <div class="edu">
+    <p class="quals-title">Học vấn</p>
+    <ul class="ed-list"><li><span class="ed-time">2019 đến 2023</span><span class="ed-main"><b>Đại học Kinh tế Tài chính TP.HCM (UEF)</b>Thương mại điện tử, Digital Marketing. GPA 3,24/4</span></li><li><span class="ed-time">2020 đến 2023</span><span class="ed-main"><b>Chủ nhiệm Câu lạc bộ Thương mại điện tử</b>Đại học Kinh tế Tài chính TP.HCM</span></li></ul>
+    <p class="quals-title">Thành tích</p>
+    <ul class="ed-list"><li><span class="ed-time">5.2021 đến 6.2021</span><span class="ed-main"><b>Top 11 cuộc thi Digital Marketing</b>Do Company Insider tổ chức</span></li><li><span class="ed-time">12.2020 đến 5.2021</span><span class="ed-main"><b>Top 3 Nghiên cứu khoa học</b>Khoa Công nghệ thông tin, Đại học Kinh tế Tài chính TP.HCM</span></li></ul>
+    <p class="quals-title">Chứng chỉ</p>
+    <div class="quals"><span>LinkedIn: Project Management</span><span>LinkedIn: Marketing Analytics</span></div>
+  </div>
+</section>
+
+<section id="ky-nang">
+  <h2 class="ptitle">Kỹ năng</h2>
+  <ul class="sk-list"><li>Thực hiện executive plan</li><li>Booking KOL, KOC, báo chí</li><li>Giữ chuẩn thương hiệu</li><li>Hiểu số liệu quảng cáo: Google, Facebook, TikTok, báo chí</li><li>Xử lý giấy tờ: hợp đồng, nghiệm thu</li><li class="sk-tools">Sử dụng công cụ <span class="sk-chips"><span>ChatGPT</span><span>Claude</span><span>Canva</span><span>Figma</span><span>CapCut</span></span></li></ul>
+</section>
+
+<section id="cong-viec">
+  <h2 class="ptitle">Công việc của tôi</h2>
+  <div class="work-grid"><button class="work" type="button" data-group="press" aria-pressed="false" aria-controls="case-study"><span class="img"><span class="type">Báo chí<br>VnExpress</span></span><b>Báo chí và PR</b><small>Tin bài PR, sự kiện, banner cho hơn 90 khách hàng.</small></button><button class="work" type="button" data-group="imc" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-imc.webp" alt="Chiến dịch Đảnh Thạnh" loading="lazy"></span><b>Chiến dịch IMC</b><small>Lên kế hoạch triển khai và vận hành chiến dịch nhiều kênh.</small></button><button class="work" type="button" data-group="kol" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-kol.webp" alt="Trang, quản lý kênh Seethesheep" loading="lazy"></span><b>Quản lý KOL</b><small>Kênh Seethesheep 51,5K follower, 22 thương hiệu hợp tác.</small></button><button class="work" type="button" data-group="media" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-media.webp" alt="Quảng cáo Oishi" loading="lazy"></span><b>Quảng cáo media</b><small>Quản lý quảng cáo, theo dõi KPI và báo cáo.</small></button><button class="work" type="button" data-group="video" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-video.webp" alt="Video TikTok Lobster Bay" loading="lazy"></span><b>Video ngắn</b><small>Sản xuất chuỗi video TikTok cho thương hiệu.</small></button><button class="work" type="button" data-group="pack" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-pack.webp" alt="Bao bì Trust Farm" loading="lazy"></span><b>Bao bì và nhận diện</b><small>Cùng team sáng tạo làm mới bao bì, logo, POSM.</small></button></div>
+</section>
+
+<section id="case-study" aria-live="polite">
+  <h2 class="ptitle">Case study</h2>
+  <p class="cs-intro">Bấm vào từng mảng ở phần Công việc của tôi để xem case tương ứng.</p>
+  <article class="cs cs-full" data-group="imc" hidden>
+    <div class="cs-label"><span>Đảnh Thạnh</span><span>Chiến dịch 360 độ</span></div>
+    <div class="cs-detail">
+    <div class="cm-stats"><div><b>+10%</b><span>người theo dõi fanpage sau 3 tháng</span></div><div><b>+300.000</b><span>tương tác bài đăng</span></div><div><b>+8.500.000</b><span>lượt xem video</span></div><div><b>3 lần</b><span>khách ký tiếp hợp đồng</span></div></div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Đây là dự án marketing 360 độ đầu tiên tôi được giao, và tôi học được rất nhiều từ dự án lẫn từ khách hàng. Đảnh Thạnh là thương hiệu Việt 30 năm tuổi nhưng đang chịu cạnh tranh mạnh. Dự án nhằm làm mới hình ảnh thương hiệu trong mắt người dùng và tăng nhận diện với khách hàng mới.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><ul><li>Khách muốn triển khai ngay sau khi chốt plan và ký hợp đồng.</li><li>Team không có thời gian chuẩn bị trước nội dung truyền thông. Khối lượng việc lớn trong khi thời gian chuẩn bị rất ngắn.</li></ul></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul><li>Dành một ngày để hiểu thương hiệu, kế hoạch triển khai và tìm đúng nhân sự cho dự án.</li><li>Làm việc sát với team brand ở từng hạng mục để giữ chất lượng và đúng hạn.</li><li>Chủ động học thêm kiến thức mới để áp dụng vào dự án, nhờ đó hiểu marketing sâu hơn.</li></ul></div>
+    <div class="cm-block"><h4>Hạng mục triển khai</h4><div class="chips"><span class="chip">Post social Facebook</span><span class="chip">Video sản phẩm TikTok</span><span class="chip">Facebook Ads</span><span class="chip">Google Ads</span><span class="chip">Booking nano KOC</span><span class="chip">Page, group</span></div></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul><li>Soạn và ký hợp đồng giữa hai bên.</li><li>Làm việc trực tiếp với khách hàng và team nội bộ, từ lên ý tưởng đến triển khai.</li><li>Booking KOC, page và group.</li><li>Báo cáo quảng cáo hằng tuần và hằng tháng.</li><li>Định hướng hình ảnh và nội dung theo kế hoạch marketing.</li></ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots one"><img src="img/danhthanh.webp" alt="Đảnh Thạnh, sản phẩm 1" loading="lazy"></div>
+    </div>
+  </div>
+  </article>
+  <article class="cs" data-group="video" hidden>
+    <div class="cs-label"><span>Lobster Bay</span><span>Xây kênh TikTok</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>30 video trong 3 ngày quay, với diễn viên là nhân viên nhà hàng chưa từng đứng trước máy quay.</p><p>Kết quả: 55.000 người theo dõi sau 3 tháng.</p><button class="more" type="button" data-case="lobsterbay">Xem chi tiết</button></div>
+      <div class="cs-pics four"><img src="img/lobsterbay-1.webp" alt="Video Lobster Bay" loading="lazy"><img src="img/lobsterbay-2.webp" alt="Video Lobster Bay" loading="lazy"><img src="img/lobsterbay-3.webp" alt="Video Lobster Bay" loading="lazy"><img src="img/lobsterbay-4.webp" alt="Video Lobster Bay" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs rev" data-group="video" hidden>
+    <div class="cs-label"><span>Blackstones</span><span>Lấy lại khách hàng</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Tiếp quản dự án video TikTok khi khách đang đòi chấm dứt hợp đồng. Thương lượng lại, cam kết lại KPI, phân lại vai trò trong team.</p><p>Kết quả: đạt 200% KPI, khách ký tiếp 2 lần.</p><button class="more" type="button" data-case="blackstones">Xem chi tiết</button></div>
+      <div class="cs-pics four"><img src="img/blackstones-1.webp" alt="Video Blackstones" loading="lazy"><img src="img/blackstones-2.webp" alt="Video Blackstones" loading="lazy"><img src="img/blackstones-3.webp" alt="Video Blackstones" loading="lazy"><img src="img/blackstones-4.webp" alt="Video Blackstones" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs cs-full" data-group="pack" hidden>
+    <div class="cs-label"><span>Vietinter Foods</span><span>Bao bì và nhận diện</span></div>
+    <div class="cs-detail">
+    <div class="cm-stats deliv">
+      <div><b>Bao bì thịt đông lạnh</b><span>Trust Farm</span></div>
+      <div><b>Logo và bộ nhận diện</b><span>Vietinter Foods</span></div>
+      <div><b>Ấn phẩm POSM</b><span>Tại điểm bán</span></div>
+    </div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Làm việc cùng Trust Farm, thương hiệu thuộc Vietinter Foods, để làm mới bao bì dòng thịt đông lạnh, giúp sản phẩm gần gũi hơn với người tiêu dùng Việt. Song song đó, thiết kế lại logo và ấn phẩm POSM cho Vietinter Foods.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><ul>
+      <li>Khách hàng muốn Trust Farm nổi bật hơn trong mắt người tiêu dùng Việt.</li>
+      <li>Đây là lần đầu tôi làm việc với một khách hàng rất kỹ tính.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul>
+      <li>Cùng team sáng tạo phát triển ý tưởng từ tranh sơn mài Việt Nam, dùng nét cọ và màu sắc để tạo thiết kế vừa riêng biệt vừa quen thuộc với người Việt.</li>
+      <li>Qua các buổi họp, tôi học cách hiểu đúng nhu cầu của khách, rồi phối hợp với team thiết kế để ra sản phẩm thuyết phục được khách.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul>
+      <li>Soạn và ký hợp đồng giữa hai bên.</li>
+      <li>Làm việc trực tiếp với khách hàng và team nội bộ, từ lên ý tưởng đến triển khai.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots two"><img src="img/vf-1.webp" alt="Bao bì Trust Farm cho bắp bò, ức gà, sườn heo" loading="lazy"><img src="img/vf-4.webp" alt="Bộ nhận diện văn phòng Vietinter Foods" loading="lazy"><img src="img/vf-2.webp" alt="Các phương án bao bì bắp bò Trust Farm" loading="lazy"><img src="img/vf-3.webp" alt="Mockup bao bì bắp bò Trust Farm" loading="lazy"></div>
+    </div>
+  </div>
+  </article>
+  <article class="cs" data-group="media" hidden>
+    <div class="cs-label"><span>Bosch</span><span>Quảng cáo media</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Quản lý quảng cáo qua đối tác thứ ba, giải thích chỉ số và so sánh với đối thủ hằng tháng.</p><p>Kết quả: 212,25% tương tác và 165,86% lượt tiếp cận so với KPI, khách ký tiếp 3 lần.</p><button class="more" type="button" data-case="bosch">Xem chi tiết</button></div>
+      <div class="cs-pics"><img src="img/bosch.webp" alt="Quảng cáo Bosch" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs rev" data-group="media" hidden>
+    <div class="cs-label"><span>Oishi</span><span>Quảng cáo media</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Khối lượng KPI lớn, deadline gấp, phải cân đối dòng tiền mà vẫn đạt đủ KPI.</p><p>Kết quả: đạt 100% KPI, 108,57% lượt tiếp cận so với KPI, khách ký tiếp 2 lần.</p><button class="more" type="button" data-case="oishi">Xem chi tiết</button></div>
+      <div class="cs-pics"><img src="img/oishi-1.webp" alt="Quảng cáo Oishi" loading="lazy"><img src="img/oishi-2.webp" alt="Quảng cáo Oishi" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs" data-group="press" hidden>
+    <div class="cs-label"><span>VnExpress</span><span>Tin bài PR</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>VnExpress có quy tắc câu chữ khắt khe hơn báo thường. Tôi đứng giữa khách hàng, phóng viên và biên tập viên, điều chỉnh hướng bài và đề xuất cách viết để hai bên thống nhất.</p><a class="more" href="baochi.html">Xem sản phẩm đã thực hiện</a></div>
+      <div class="cs-pics two-up"><img src="img/vne-vinfast.webp" alt="VinFast ra mắt dòng xe máy điện cao cấp, giá từ 59,9 triệu đồng" loading="lazy"><img src="img/vne-vib.webp" alt="VIB ưu đãi lãi suất mua ôtô từ 8,9% một năm" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs rev" data-group="press" hidden>
+    <div class="cs-label"><span>VnExpress</span><span>Chuyên trang thương hiệu</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Phối hợp với ban nội dung và kỹ thuật để thiết kế landing page riêng cho từng thương hiệu ngay trên báo.</p><p>Ví dụ: chuyên mục Ngân hàng sáng tạo, giải chạy Kun Marathon, chuyên trang Khí mát lành.</p><a class="more" href="baochi.html#chuyen-trang">Xem chuyên trang</a></div>
+      <div class="cs-pics two-up"><img src="img/vne-ebank.webp" alt="Chuyên mục Ngân hàng sáng tạo" loading="lazy"><img src="img/vne-kun.webp" alt="Chuyên trang giải chạy Kun Marathon 2026" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs" data-group="press" hidden>
+    <div class="cs-label"><span>VnExpress</span><span>Vodcast</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Cùng team sản xuất lên kịch bản, đề xuất chuyên gia, chốt lịch quay, site check và tham gia quay dựng.</p><p>VIB Smart Money, Smart Life: 14,2 triệu lượt xem, đạt 178% KPI.</p><a class="more" href="baochi.html#vodcast">Xem vodcast</a></div>
+      <div class="cs-pics two-up"><img src="img/vib-ep1.webp" alt="Vodcast VIB" loading="lazy"><img src="img/pru-talk1.webp" alt="Talkshow Prudential" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs cs-full" data-group="kol" hidden>
+    <div class="cs-label"><span>Seethesheep</span><span>Quản lý KOL</span></div>
+    <div class="cs-detail">
+    <div class="cm-stats"><div><b>51,5K</b><span>người theo dõi</span></div><div><b>3,6M</b><span>lượt thích</span></div><div><b>22</b><span>thương hiệu đã hợp tác</span></div><div><b>1,8M</b><span>lượt xem cao nhất của một video tài trợ</span></div></div>
+    <div class="cm-block"><h4>Về kênh</h4><p>Kênh vlog đời sống về du lịch, làm đẹp và chuyện thường ngày, giọng kể hài hước và gần gũi. Nội dung tài trợ được lồng vào tình huống đời thường như tiểu phẩm, POV, nhật ký, nên người xem không thấy giống quảng cáo.</p></div>
+    <div class="cm-block"><h4>Việc tôi làm</h4><ul><li>Tư vấn hướng nội dung cho KOC khi làm việc với brand.</li><li>Hỗ trợ quay chụp.</li><li>Xử lý hợp đồng, nghiệm thu và thanh toán.</li><li>Làm việc với đối tác.</li></ul></div>
+    <div class="cm-block"><h4>Thương hiệu đã hợp tác</h4><p class="bgroup">Làm đẹp và chăm sóc da</p><div class="chips"><span class="chip">Cỏ Mềm</span><span class="chip">3CE</span><span class="chip">Glamrr Q</span><span class="chip">Kiehl's</span><span class="chip">SKIN1004</span><span class="chip">Dr.G</span><span class="chip">Feld Apotheke</span><span class="chip">Surmedic</span><span class="chip">Jessup Beauty</span><span class="chip">Dememoria</span></div><p class="bgroup">Đồ ăn và thức uống</p><div class="chips"><span class="chip">Nescafé</span><span class="chip">KitKat</span><span class="chip">Coca-Cola</span><span class="chip">Mentos</span><span class="chip">Chupa Chups</span><span class="chip">Lẩu Reski</span></div><p class="bgroup">Công nghệ, mua sắm, tài chính</p><div class="chips"><span class="chip">Lazada</span><span class="chip">be</span><span class="chip">SkyJoy x VPBank</span><span class="chip">JBL</span><span class="chip">Hollyland</span></div><p class="bgroup">Sức khỏe</p><div class="chips"><span class="chip">Eugica</span></div></div>
+    <div class="cm-block"><h4>Video tài trợ nổi bật theo lượt xem</h4><div class="koc-grid"><figure class="koc"><img src="img/koc-comem.webp" alt="Video tài trợ Cỏ Mềm trên kênh Seethesheep" loading="lazy"><figcaption><b>Cỏ Mềm</b>1,8 triệu lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-lazada.webp" alt="Video tài trợ Lazada trên kênh Seethesheep" loading="lazy"><figcaption><b>Lazada</b>1,4 triệu lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-reski.webp" alt="Video tài trợ Lẩu Reski trên kênh Seethesheep" loading="lazy"><figcaption><b>Lẩu Reski</b>531.000 lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-nescafe.webp" alt="Video tài trợ Nescafé trên kênh Seethesheep" loading="lazy"><figcaption><b>Nescafé</b>406.000 lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-chupa.webp" alt="Video tài trợ Chupa Chups trên kênh Seethesheep" loading="lazy"><figcaption><b>Chupa Chups</b>235.000 lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-mentos.webp" alt="Video tài trợ Mentos trên kênh Seethesheep" loading="lazy"><figcaption><b>Mentos</b>202.000 lượt xem</figcaption></figure></div></div>
+    <div class="cm-block"><h4>Nhận xét nhanh</h4><ul><li>Gần 2 hợp đồng thương hiệu mỗi tháng, tính từ 11.2025 đến 11.2026.</li><li>Làm đẹp là thế mạnh rõ nhất của kênh, chiếm 10 trên 22 thương hiệu.</li><li>Nhiều video tài trợ đạt lượt xem cao hơn video thường, nhờ cách lồng sản phẩm vào câu chuyện.</li></ul></div>
+    <p style="margin-top:6px"><a class="btn" href="https://www.tiktok.com/@seethesheep" target="_blank" rel="noopener">Xem kênh trên TikTok</a></p>
+  </div>
+  </article>
+</section>
+
+<section class="on-maroon" id="bao-chi">
+  <div class="press-head"><span class="script-acc" aria-hidden="true">VnExpress</span><h2 class="ptitle">Báo chí</h2></div>
+  <div class="press-facts"><span><b>90+</b>khách hàng</span><span><b>12</b>ngành hàng</span><span><b>10</b>sale phối hợp</span><span><b>15 triệu đến 400+ triệu</b> mỗi dự án</span></div>
+  <p class="press-prod">Sản phẩm triển khai: tin bài PR, sự kiện, banner, social, vodcast, subfolder, quảng cáo CPM.</p>
+  <div class="inds"><div class="ind"><p class="ind-name">Tài chính, ngân hàng<small>11 khách hàng</small></p><div class="ind-chips"><span>VIB</span><span>BIDV</span><span>Eximbank</span><span>OCB</span><span>Woori Bank</span><span>Citibank</span><span>Home Credit</span><span>Cathay Bank</span><span>VinaCapital</span><span>Bản Việt</span><span>VietBank</span></div></div><div class="ind"><p class="ind-name">Ô tô, xe máy<small>14 khách hàng</small></p><div class="ind-chips"><span>VinFast</span><span>BYD</span><span>Porsche</span><span>Bentley</span><span>Land Rover</span><span>Volvo</span><span>Ford</span><span>Suzuki</span><span>Motul</span><span>Sailun</span><span>MOVE</span><span>Trend Moto</span><span>LAM Scooter</span><span class="more-n">và 1 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Giáo dục<small>13 khách hàng</small></p><div class="ind-chips"><span>ĐH Bách Khoa</span><span>ĐH Tôn Đức Thắng</span><span>ĐH Kinh tế Luật</span><span>VGU</span><span>ĐH Công Thương</span><span>ĐH Bà Rịa Vũng Tàu</span><span>EEO Việt Nam</span><span class="more-n">và 6 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Y tế<small>12 khách hàng</small></p><div class="ind-chips"><span>Ecogreen</span><span>Signia</span><span>BV Quốc tế City</span><span>BV Đa khoa Phương Nam</span><span>Dược phẩm Thái Minh</span><span>Nha khoa Hoa Hồng</span><span>BV Gia An</span><span class="more-n">và 5 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Truyền thông, giải trí<small>10 khách hàng</small></p><div class="ind-chips"><span>VPlay VTV</span><span>Bel Việt Nam</span><span>OEG</span><span>Studio Sparx</span><span>Media Lab</span><span class="more-n">và 5 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Tiêu dùng, bán lẻ<small>9 khách hàng</small></p><div class="ind-chips"><span>Calofic</span><span>Con Cưng</span><span>Kun</span><span>A&B Shopping Mall</span><span>Pi Tower</span><span class="more-n">và 4 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Bảo hiểm<small>6 khách hàng</small></p><div class="ind-chips"><span>Manulife</span><span>Prudential</span><span>Bảo hiểm Xã hội</span><span>Hiệp hội Bảo hiểm</span><span class="more-n">và 2 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Công nghệ, điện<small>6 khách hàng</small></p><div class="ind-chips"><span>Realme</span><span>Garmin</span><span>Điện lực TP.HCM</span><span>Điện lực miền Nam</span><span>An Tiến</span><span class="more-n">và 1 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Vận tải, hàng không<small>5 khách hàng</small></p><div class="ind-chips"><span>Vietnam Airlines</span><span>Sân bay Tân Sơn Nhất</span><span>J&amp;T Express</span><span>BEST Express</span><span>be Group</span></div></div><div class="ind"><p class="ind-name">Bất động sản<small>4 khách hàng</small></p><div class="ind-chips"><span>Đất Hồ Tây</span><span>GI Realty</span><span>BDB Group</span><span>Cheil</span></div></div><div class="ind"><p class="ind-name">Du lịch, khách sạn<small>3 khách hàng</small></p><div class="ind-chips"><span>Saigontourist</span><span>White Palace</span><span>MAI</span></div></div><div class="ind"><p class="ind-name">Đa ngành<small>1 khách hàng</small></p><div class="ind-chips"><span>Vingroup</span></div></div></div>
+  <a class="btn primary ldp-link" href="baochi.html">Xem các sản phẩm đã thực hiện</a>
+  <p class="ind-title">Dự án IMC trên VnExpress</p>
+  <div class="press-grid two">
+    <div class="pcard"><span class="top">Aves</span><span class="txt"><b>Xe điện</b>Cuộc thi thiết kế xe máy điện Việt Nam.<em class="ongoing">Dự án đang triển khai</em></span></div>
+    <div class="pcard"><span class="top">Long Châu</span><span class="txt"><b>Y tế</b>Giải chạy gia đình tại Thanh Hóa.<em class="ongoing">Dự án đang triển khai</em></span></div>
+  </div>
+</section>
+
+<footer class="on-maroon" id="lien-he">
+  <h2 class="ptitle">Cùng làm chiến dịch tiếp theo</h2>
+  <div class="contact">
+    <a class="btn primary" href="mailto:channy2108.work@gmail.com">Gửi email</a>
+    <a class="btn" href="https://www.linkedin.com/in/trany/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="cv.pdf" download="CV_Nguyen_Kim_Trang.pdf">Tải CV</a>
+  </div>
+</footer>
+</div>
+<dialog class="case-modal" id="case-lobsterbay" aria-labelledby="cm-lb-title">
+  <div class="cm-head">
+    <div><h3 id="cm-lb-title">Lobster Bay</h3><p>Nhà hàng hải sản. Xây dựng kênh TikTok thương hiệu.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats">
+      <div><b>30</b><span>video</span></div>
+      <div><b>3</b><span>ngày quay</span></div>
+      <div><b>55.000</b><span>người theo dõi sau 3 tháng</span></div>
+      <div><b>17.000</b><span>lượt thích sau 3 tháng</span></div>
+    </div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Phụ trách dự án xây dựng và phát triển kênh TikTok cho Lobster Bay, nhằm tăng nhận diện thương hiệu.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><p>Thương hiệu muốn dùng chính nhân viên của mình làm diễn viên, những người chưa từng diễn trước máy quay.</p></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul>
+      <li>Cùng đạo diễn trao đổi trước với các bạn diễn, từ đó lên kế hoạch quay phù hợp.</li>
+      <li>Lường trước rủi ro, trao đổi với khách hàng và được duyệt phương án.</li>
+      <li>Hướng dẫn các bạn diễn qua từng cảnh khi quay để giữ chất lượng và cảm xúc của video.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul>
+      <li>Soạn và ký hợp đồng giữa hai bên.</li>
+      <li>Làm việc trực tiếp với khách hàng và team nội bộ, từ lên ý tưởng đến sản xuất.</li>
+      <li>Báo cáo các chỉ số chính hằng tuần và hằng tháng.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Kết quả</h4><p>Nhờ nội dung hải sản hấp dẫn, kênh TikTok tạo được ấn tượng rõ với khách hàng của Lobster Bay, đạt 55.000 người theo dõi và 17.000 lượt thích chỉ sau 3 tháng.</p></div>
+    <div class="cm-block"><h4>Một số video tiêu biểu</h4>
+      <div class="cm-shots"><img src="img/lobsterbay-1.webp" alt="Video TikTok Lobster Bay số 1" loading="lazy"><img src="img/lobsterbay-2.webp" alt="Video TikTok Lobster Bay số 2" loading="lazy"><img src="img/lobsterbay-3.webp" alt="Video TikTok Lobster Bay số 3" loading="lazy"><img src="img/lobsterbay-4.webp" alt="Video TikTok Lobster Bay số 4" loading="lazy"></div>
+      <p style="margin-top:14px"><a class="btn" href="https://www.tiktok.com/@lobsterbayvn/video/7230051332831350021" target="_blank" rel="noopener">Xem video trên TikTok</a></p>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-vietinter" aria-labelledby="cm-vf-title">
+  <div class="cm-head">
+    <div><h3 id="cm-vf-title">Vietinter Foods</h3><p>Thực phẩm. Làm mới bao bì Trust Farm và bộ nhận diện thương hiệu.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats deliv">
+      <div><b>Bao bì thịt đông lạnh</b><span>Trust Farm</span></div>
+      <div><b>Logo và bộ nhận diện</b><span>Vietinter Foods</span></div>
+      <div><b>Ấn phẩm POSM</b><span>Tại điểm bán</span></div>
+    </div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Làm việc cùng Trust Farm, thương hiệu thuộc Vietinter Foods, để làm mới bao bì dòng thịt đông lạnh, giúp sản phẩm gần gũi hơn với người tiêu dùng Việt. Song song đó, thiết kế lại logo và ấn phẩm POSM cho Vietinter Foods.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><ul>
+      <li>Khách hàng muốn Trust Farm nổi bật hơn trong mắt người tiêu dùng Việt.</li>
+      <li>Đây là lần đầu tôi làm việc với một khách hàng rất kỹ tính.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul>
+      <li>Cùng team sáng tạo phát triển ý tưởng từ tranh sơn mài Việt Nam, dùng nét cọ và màu sắc để tạo thiết kế vừa riêng biệt vừa quen thuộc với người Việt.</li>
+      <li>Qua các buổi họp, tôi học cách hiểu đúng nhu cầu của khách, rồi phối hợp với team thiết kế để ra sản phẩm thuyết phục được khách.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul>
+      <li>Soạn và ký hợp đồng giữa hai bên.</li>
+      <li>Làm việc trực tiếp với khách hàng và team nội bộ, từ lên ý tưởng đến triển khai.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots two"><img src="img/vf-1.webp" alt="Bao bì Trust Farm cho bắp bò, ức gà, sườn heo" loading="lazy"><img src="img/vf-4.webp" alt="Bộ nhận diện văn phòng Vietinter Foods" loading="lazy"><img src="img/vf-2.webp" alt="Các phương án bao bì bắp bò Trust Farm" loading="lazy"><img src="img/vf-3.webp" alt="Mockup bao bì bắp bò Trust Farm" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-danhthanh" aria-labelledby="cm-danhthanh-title">
+  <div class="cm-head">
+    <div><h3 id="cm-danhthanh-title">Đảnh Thạnh</h3><p>Nước khoáng. Chiến dịch marketing 360 độ làm mới thương hiệu.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>+10%</b><span>người theo dõi fanpage sau 3 tháng</span></div><div><b>+300.000</b><span>tương tác bài đăng</span></div><div><b>+8.500.000</b><span>lượt xem video</span></div><div><b>3 lần</b><span>khách ký tiếp hợp đồng</span></div></div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Đây là dự án marketing 360 độ đầu tiên tôi được giao, và tôi học được rất nhiều từ dự án lẫn từ khách hàng. Đảnh Thạnh là thương hiệu Việt 30 năm tuổi nhưng đang chịu cạnh tranh mạnh. Dự án nhằm làm mới hình ảnh thương hiệu trong mắt người dùng và tăng nhận diện với khách hàng mới.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><ul><li>Khách muốn triển khai ngay sau khi chốt plan và ký hợp đồng.</li><li>Team không có thời gian chuẩn bị trước nội dung truyền thông. Khối lượng việc lớn trong khi thời gian chuẩn bị rất ngắn.</li></ul></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul><li>Dành một ngày để hiểu thương hiệu, kế hoạch triển khai và tìm đúng nhân sự cho dự án.</li><li>Làm việc sát với team brand ở từng hạng mục để giữ chất lượng và đúng hạn.</li><li>Chủ động học thêm kiến thức mới để áp dụng vào dự án, nhờ đó hiểu marketing sâu hơn.</li></ul></div>
+    <div class="cm-block"><h4>Hạng mục triển khai</h4><div class="chips"><span class="chip">Post social Facebook</span><span class="chip">Video sản phẩm TikTok</span><span class="chip">Facebook Ads</span><span class="chip">Google Ads</span><span class="chip">Booking nano KOC</span><span class="chip">Page, group</span></div></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul><li>Soạn và ký hợp đồng giữa hai bên.</li><li>Làm việc trực tiếp với khách hàng và team nội bộ, từ lên ý tưởng đến triển khai.</li><li>Booking KOC, page và group.</li><li>Báo cáo quảng cáo hằng tuần và hằng tháng.</li><li>Định hướng hình ảnh và nội dung theo kế hoạch marketing.</li></ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots one"><img src="img/danhthanh.webp" alt="Đảnh Thạnh, sản phẩm 1" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-bosch" aria-labelledby="cm-bosch-title">
+  <div class="cm-head">
+    <div><h3 id="cm-bosch-title">Bosch</h3><p>Gia dụng. Quản lý dự án quảng cáo media qua đối tác thứ ba.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>212,25%</b><span>tương tác so với KPI</span></div><div><b>165,86%</b><span>lượt tiếp cận so với KPI</span></div><div><b>100%</b><span>KPI đạt được</span></div><div><b>3 lần</b><span>khách ký tiếp hợp đồng</span></div></div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Bosch là một trong những khách hàng lớn tôi có dịp hợp tác. Tôi quản lý dự án media, chạy quảng cáo trên các nền tảng của Bosch thông qua một đối tác thứ ba.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><ul><li>Bosch yêu cầu giải thích chi tiết các chỉ số trong báo cáo media, đặc biệt là so sánh hằng tháng giữa Bosch và đối thủ.</li><li>Giai đoạn đầu tư vấn cho khách khá khó khăn vì kiến thức media của tôi khi đó chưa vững.</li></ul></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul><li>Làm việc sát với team media để hiểu thuật ngữ và cách chạy quảng cáo cho từng mục tiêu khác nhau.</li><li>Nhờ sự hỗ trợ ban đầu của team media, giờ tôi tự tin tư vấn media cho khách và làm báo cáo tốt hơn.</li></ul></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul><li>Soạn và ký hợp đồng giữa hai bên.</li><li>Làm việc trực tiếp với khách hàng và team media, từ kế hoạch đến triển khai.</li><li>Báo cáo quảng cáo hằng tuần và hằng tháng.</li></ul></div>
+    <div class="cm-block"><h4>Kết quả</h4><ul><li>Đạt 100% KPI đề ra.</li><li>Tối ưu chi phí quảng cáo, tăng lợi nhuận cho công ty.</li><li>Khách ký tiếp hợp đồng 3 lần.</li></ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots one narrow"><img src="img/bosch.webp" alt="Bosch, sản phẩm 1" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-oishi" aria-labelledby="cm-oishi-title">
+  <div class="cm-head">
+    <div><h3 id="cm-oishi-title">Oishi</h3><p>Thực phẩm, snack. Quản lý dự án quảng cáo media qua đối tác thứ ba.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>100,29%</b><span>tương tác so với KPI</span></div><div><b>108,57%</b><span>lượt tiếp cận so với KPI</span></div><div><b>100%</b><span>KPI đạt được</span></div><div><b>2 lần</b><span>khách ký tiếp hợp đồng</span></div></div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Oishi là một trong những khách hàng lớn tôi có dịp hợp tác. Tôi quản lý dự án media, chạy quảng cáo trên các nền tảng của Oishi thông qua một đối tác thứ ba.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><p>Khối lượng KPI lớn và deadline gấp là áp lực lớn cho cả tôi và team media, vì phải cân đối dòng tiền mà vẫn đạt đủ KPI.</p></div>
+    <div class="cm-block"><h4>Giải pháp</h4><p>Làm việc sát với team media và theo dõi dự án liên tục để xử lý kịp thời mọi vấn đề phát sinh trong quá trình triển khai.</p></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul><li>Soạn và ký hợp đồng giữa hai bên.</li><li>Làm việc trực tiếp với khách hàng và team media, từ kế hoạch đến triển khai.</li><li>Báo cáo quảng cáo hằng tuần và hằng tháng.</li></ul></div>
+    <div class="cm-block"><h4>Kết quả</h4><ul><li>Đạt 100% KPI đề ra.</li><li>Tối ưu chi phí quảng cáo.</li><li>Khách ký tiếp hợp đồng 2 lần.</li></ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots two"><img src="img/oishi-1.webp" alt="Oishi, sản phẩm 1" loading="lazy"><img src="img/oishi-2.webp" alt="Oishi, sản phẩm 2" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-blackstones" aria-labelledby="cm-blackstones-title">
+  <div class="cm-head">
+    <div><h3 id="cm-blackstones-title">Blackstones</h3><p>Dịch vụ tang lễ. Video TikTok giới thiệu doanh nghiệp.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Đóng">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>200%</b><span>KPI đạt được</span></div><div><b>2 lần</b><span>khách ký tiếp hợp đồng</span></div></div>
+    <div class="cm-block"><h4>Tổng quan</h4><p>Một trường hợp đặc biệt với tôi. Blackstones, đơn vị dịch vụ tang lễ, muốn làm video TikTok để quảng bá doanh nghiệp trong ngành.</p></div>
+    <div class="cm-block"><h4>Thách thức</h4><ul><li>Dự án ban đầu do một đồng nghiệp phụ trách. Do vấn đề trong khâu triển khai, dự án không đạt cam kết trong hợp đồng, khách muốn chấm dứt hợp đồng và đòi bồi thường theo thỏa thuận.</li><li>Tôi được giao tiếp quản dự án với vai trò Account Lead để xử lý các vấn đề còn tồn đọng.</li></ul></div>
+    <div class="cm-block"><h4>Giải pháp</h4><ul><li>Tổ chức buổi họp để thương lượng và xoa dịu sự không hài lòng của khách.</li><li>Đề xuất gia hạn hợp đồng, cam kết lại số lượng video và KPI.</li><li>Làm việc với team nội bộ để phân lại vai trò và trách nhiệm.</li></ul></div>
+    <div class="cm-block"><h4>Phạm vi công việc</h4><ul><li>Soạn và ký hợp đồng giữa hai bên.</li><li>Làm việc trực tiếp với khách hàng và team media, từ kế hoạch đến triển khai.</li><li>Báo cáo quảng cáo hằng tuần và hằng tháng.</li></ul></div>
+    <div class="cm-block"><h4>Kết quả</h4><ul><li>Đạt 200% KPI đề ra.</li><li>Giảm thiểu chi phí tổn thất.</li><li>Khách ký tiếp hợp đồng 2 lần.</li></ul></div>
+    <div class="cm-block"><h4>Sản phẩm</h4>
+      <div class="cm-shots "><img src="img/blackstones-1.webp" alt="Blackstones, sản phẩm 1" loading="lazy"><img src="img/blackstones-2.webp" alt="Blackstones, sản phẩm 2" loading="lazy"><img src="img/blackstones-3.webp" alt="Blackstones, sản phẩm 3" loading="lazy"><img src="img/blackstones-4.webp" alt="Blackstones, sản phẩm 4" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="case-seethesheep" aria-labelledby="cm-seethesheep-title">
+  <div class="cm-head"><div><h3 id="cm-seethesheep-title">Seethesheep</h3><p>Kênh TikTok lifestyle. Quản lý kênh và kết nối KOC với thương hiệu.</p></div><button class="cm-close" type="button" data-close aria-label="Đóng">×</button></div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>51,5K</b><span>người theo dõi</span></div><div><b>3,6M</b><span>lượt thích</span></div><div><b>22</b><span>thương hiệu đã hợp tác</span></div><div><b>1,8M</b><span>lượt xem cao nhất của một video tài trợ</span></div></div>
+    <div class="cm-block"><h4>Về kênh</h4><p>Kênh vlog đời sống về du lịch, làm đẹp và chuyện thường ngày, giọng kể hài hước và gần gũi. Nội dung tài trợ được lồng vào tình huống đời thường như tiểu phẩm, POV, nhật ký, nên người xem không thấy giống quảng cáo.</p></div>
+    <div class="cm-block"><h4>Việc tôi làm</h4><ul><li>Tư vấn hướng nội dung cho KOC khi làm việc với brand.</li><li>Hỗ trợ quay chụp.</li><li>Xử lý hợp đồng, nghiệm thu và thanh toán.</li><li>Làm việc với đối tác.</li></ul></div>
+    <div class="cm-block"><h4>Thương hiệu đã hợp tác</h4><p class="bgroup">Làm đẹp và chăm sóc da</p><div class="chips"><span class="chip">Cỏ Mềm</span><span class="chip">3CE</span><span class="chip">Glamrr Q</span><span class="chip">Kiehl's</span><span class="chip">SKIN1004</span><span class="chip">Dr.G</span><span class="chip">Feld Apotheke</span><span class="chip">Surmedic</span><span class="chip">Jessup Beauty</span><span class="chip">Dememoria</span></div><p class="bgroup">Đồ ăn và thức uống</p><div class="chips"><span class="chip">Nescafé</span><span class="chip">KitKat</span><span class="chip">Coca-Cola</span><span class="chip">Mentos</span><span class="chip">Chupa Chups</span><span class="chip">Lẩu Reski</span></div><p class="bgroup">Công nghệ, mua sắm, tài chính</p><div class="chips"><span class="chip">Lazada</span><span class="chip">be</span><span class="chip">SkyJoy x VPBank</span><span class="chip">JBL</span><span class="chip">Hollyland</span></div><p class="bgroup">Sức khỏe</p><div class="chips"><span class="chip">Eugica</span></div></div>
+    <div class="cm-block"><h4>Video tài trợ nổi bật theo lượt xem</h4><div class="koc-grid"><figure class="koc"><img src="img/koc-comem.webp" alt="Video tài trợ Cỏ Mềm trên kênh Seethesheep" loading="lazy"><figcaption><b>Cỏ Mềm</b>1,8 triệu lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-lazada.webp" alt="Video tài trợ Lazada trên kênh Seethesheep" loading="lazy"><figcaption><b>Lazada</b>1,4 triệu lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-reski.webp" alt="Video tài trợ Lẩu Reski trên kênh Seethesheep" loading="lazy"><figcaption><b>Lẩu Reski</b>531.000 lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-nescafe.webp" alt="Video tài trợ Nescafé trên kênh Seethesheep" loading="lazy"><figcaption><b>Nescafé</b>406.000 lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-chupa.webp" alt="Video tài trợ Chupa Chups trên kênh Seethesheep" loading="lazy"><figcaption><b>Chupa Chups</b>235.000 lượt xem</figcaption></figure><figure class="koc"><img src="img/koc-mentos.webp" alt="Video tài trợ Mentos trên kênh Seethesheep" loading="lazy"><figcaption><b>Mentos</b>202.000 lượt xem</figcaption></figure></div></div>
+    <div class="cm-block"><h4>Nhận xét nhanh</h4><ul><li>Gần 2 hợp đồng thương hiệu mỗi tháng, tính từ 11.2025 đến 11.2026.</li><li>Làm đẹp là thế mạnh rõ nhất của kênh, chiếm 10 trên 22 thương hiệu.</li><li>Nhiều video tài trợ đạt lượt xem cao hơn video thường, nhờ cách lồng sản phẩm vào câu chuyện.</li></ul></div>
+    <p style="margin-top:6px"><a class="btn" href="https://www.tiktok.com/@seethesheep" target="_blank" rel="noopener">Xem kênh trên TikTok</a></p>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="case-aves" aria-labelledby="cm-aves-title">
+  <div class="cm-head"><div><h3 id="cm-aves-title">Aves</h3><p>Xe điện. Xây dựng nhận diện cho thương hiệu mới ra mắt trên VnExpress.</p></div><button class="cm-close" type="button" data-close aria-label="Đóng">×</button></div>
+  <div class="cm-body"><div class="cm-update"><b>Đang cập nhật</b><p>Dự án đang triển khai. Nội dung chi tiết và kết quả sẽ được cập nhật khi dự án hoàn thành.</p></div></div>
+</dialog>
+
+<dialog class="case-modal" id="case-longchau" aria-labelledby="cm-longchau-title">
+  <div class="cm-head"><div><h3 id="cm-longchau-title">Long Châu</h3><p>Y tế. Giải chạy gia đình tại Thanh Hóa.</p></div><button class="cm-close" type="button" data-close aria-label="Đóng">×</button></div>
+  <div class="cm-body"><div class="cm-update"><b>Đang cập nhật</b><p>Dự án đang triển khai. Nội dung chi tiết và kết quả sẽ được cập nhật khi dự án hoàn thành.</p></div></div>
+</dialog>
+<script>
+const stages={
+  intro:{kicker:"Giới thiệu",title:"Xin chào, tôi là Trang",body:[
+    "Mọi người thường gọi tôi là Channy. Tôi học ngành Thương mại điện tử, Digital Marketing tại Đại học Kinh tế Tài chính TP.HCM. Từ thời sinh viên, tôi đã muốn thử đủ mọi ngách của nghề truyền thông.",
+    "Vì vậy tôi chọn một lộ trình đi từ gốc: bắt đầu ở production house để hiểu một sản phẩm được làm ra thế nào, sang agency để học cách chạy cả một chiến dịch, rồi về VnExpress để thấy nội dung đến tay người đọc ra sao.",
+    "Giờ tôi muốn mang trọn góc nhìn đó về phía thương hiệu, nơi một chiến dịch được nghĩ ra từ đầu và đi đến kết quả cuối cùng."]},
+  intern:{kicker:"12.2022 đến 6.2023",title:"Thực tập sinh Production House tại Fram’us Studio",bar:[71.7,10.0],body:[
+    "Thời sinh viên, ngoài câu lạc bộ và các cuộc thi, tôi muốn hiểu hết mọi ngách của nghề truyền thông. Vì vậy chặng đầu tiên tôi chọn vào một team production house, để biết một video ngắn hay một TVC được làm ra như thế nào.",
+    "Ở đây tôi học cách đọc brief và ý tưởng, trao đổi với đạo diễn và khách hàng, góp ý sao cho đúng, theo sát tiến độ để giữ đúng timeline. Tôi hiểu một video ngắn ra đời từ lúc lên ý tưởng đến khi hoàn thành.",
+    "<span class='clients'><b>Khách hàng đã triển khai</b><button type='button' class='chip chip-btn' data-case='lobsterbay'>Lobster Bay <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='vietinter'>Vietinter Foods <span aria-hidden='true'>+</span></button></span>"]},
+  ae:{kicker:"6.2023 đến 8.2024",title:"Account Executive tại Mita Agency",bar:[48.3,23.4],body:[
+    "Tôi phụ trách 6 dự án trọng điểm, mỗi dự án trị giá 1 đến 2 tỷ đồng, vận hành dự án từ đầu đến cuối:<ul class='plain'><li>Lên kế hoạch triển khai (executive plan)</li><li>Booking KOL và báo chí</li><li>Làm việc với đối tác, freelancer, production house</li><li>Kiểm soát chất lượng storyboard, nội dung, hình ảnh để đúng brand guideline</li><li>Theo dõi số liệu quảng cáo trên các nền tảng và làm báo cáo</li></ul>",
+    "Đây là lúc tôi học cách giữ cho một chiến dịch nhiều kênh chạy đúng hạn, và cả cách lấy lại niềm tin khi nhận lại một khách hàng đang không hài lòng.",
+    "<span class='clients'><b>Khách hàng đã triển khai</b><button type='button' class='chip chip-btn' data-case='danhthanh'>Đảnh Thạnh <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='bosch'>Bosch <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='oishi'>Oishi <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='blackstones'>Blackstones <span aria-hidden='true'>+</span></button></span>"]},
+  vne:{kicker:"10.2024 đến nay",title:"Điều phối dự án quảng cáo tại FPT Online, VnExpress",bar:[3.3,41.7],body:[
+    "Tôi là đầu mối triển khai cho 10 sale, theo hơn 90 khách hàng thuộc 12 ngành, từ ngân hàng, ô tô, y tế đến hàng không. Mỗi tháng có 2 đến 3 dự án lớn cùng 10 đến 15 khách triển khai sản phẩm.",
+    "Làm việc trực tiếp với phóng viên, biên tập viên và lãnh đạo phía khách hàng giúp tôi hiểu một nội dung cần gì để vừa đúng chuẩn báo chí, vừa đúng ý thương hiệu. Theo nhiều ngành hàng cùng lúc, tôi cũng thấy rõ cách mỗi ngành và các thương hiệu cạnh tranh nhau xây chiến lược truyền thông khác nhau ra sao.",
+    "<span class='clients'><b>Một số dự án gần đây</b><button type='button' class='chip chip-btn' data-case='aves'>Aves +</button><button type='button' class='chip chip-btn' data-case='longchau'>Long Châu +</button></span>"]},
+  kol:{kicker:"2025 đến nay",title:"Quản lý kênh KOL Seethesheep",bar:[3.3,36.7],body:[
+    "Tôi quản lý kênh TikTok lifestyle Seethesheep với 51.500 người theo dõi, là cầu nối giữa KOC và đội ngũ thương hiệu: tư vấn hướng nội dung, hỗ trợ quay chụp, xử lý hợp đồng, nghiệm thu và thanh toán.","Trong một năm gần nhất, kênh đã hợp tác với 22 thương hiệu như Lazada, Nescafé, Coca-Cola, 3CE, Kiehl's.",
+    "<span class='clients'><button type='button' class='chip chip-btn' data-case='seethesheep'>Xem chi tiết +</button></span>"]},
+  next:{kicker:"Chặng tiếp theo",title:"Về phía thương hiệu",bar:[0.0,4.0],future:true,body:[
+    "Ở chặng tiếp theo, tôi muốn mang góc nhìn về ngành mà mình đã tích lũy, cùng những kỹ năng và kinh nghiệm qua từng chặng, để cùng một thương hiệu viết tiếp hành trình mới.","Và tôi mong hành trình ấy, như những chặng đã qua, tiếp tục là một câu chuyện đáng để kể."]}
+};
+const labels={next:["Chặng tiếp theo","Phía thương hiệu"],kol:["Quản lý KOL","Seethesheep"],vne:["Điều phối dự án","VnExpress"],ae:["Account Executive","Mita Agency"],intern:["Thực tập sinh","Fram’us Studio"]};
+const rowsEl=document.getElementById('rows');
+const html=b=>b.map(t=>"<div class=p>"+t+"</div>").join("");
+Object.keys(labels).forEach(k=>{
+  const st=stages[k],[l1,l2]=labels[k];
+  const wrap=document.createElement('div');wrap.className='row-wrap';
+  const btn=document.createElement('button');
+  btn.className='row';btn.type='button';btn.dataset.key=k;btn.setAttribute('aria-pressed','false');
+  btn.innerHTML=`<span class="label">${l1}<small>${l2}</small></span><span class="track"><span class="bar${st.unknown?' unknown':''}${st.future?' future':''}" style="left:${st.bar[0]}%;width:${st.bar[1]}%"></span></span>`;
+  btn.addEventListener('click',()=>select(btn.getAttribute('aria-pressed')==='true'?'intro':k));
+  const inl=document.createElement('div');inl.className='inline-story';inl.innerHTML=html(st.body);
+  wrap.append(btn,inl);rowsEl.appendChild(wrap);
+});
+const mobile=window.matchMedia('(max-width:760px)');
+function select(k){
+  document.querySelectorAll('.row').forEach(r=>r.setAttribute('aria-pressed',r.dataset.key===k?'true':'false'));
+  if(mobile.matches&&k!=='intro')return;
+  const st=stages[k];
+  document.getElementById('story-kicker').textContent=st.kicker;
+  document.getElementById('story-title').textContent=st.title;
+  const body=document.getElementById('story-body');
+  body.className='';void body.offsetWidth;body.className='story-body-in';
+  body.innerHTML=html(st.body);
+  document.getElementById('story-reset').hidden=(k==='intro');
+}
+document.getElementById('story-reset').addEventListener('click',()=>select('intro'));
+mobile.addEventListener('change',()=>select('intro'));
+document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-case]');
+  if(c){e.stopPropagation();document.getElementById('case-'+c.dataset.case).showModal();return;}
+  if(e.target.closest('[data-close]')){e.target.closest('dialog').close();return;}
+  if(e.target.tagName==='DIALOG'){e.target.close();}
+});
+select('intro');
+
+function showGroup(g,scroll){
+  document.querySelectorAll('#cong-viec .work').forEach(t=>t.setAttribute('aria-pressed',t.dataset.group===g?'true':'false'));
+  let first=true;
+  document.querySelectorAll('#case-study .cs').forEach(a=>{const on=a.dataset.group===g;a.hidden=!on;a.classList.toggle('first',on&&first);if(on){first=false;a.classList.remove('cs-anim');void a.offsetWidth;a.classList.add('cs-anim');}});
+  if(scroll&&window.matchMedia('(max-width:900px)').matches)document.getElementById('case-study').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('#cong-viec .work').forEach(t=>t.addEventListener('click',()=>showGroup(t.dataset.group,true)));
+showGroup('press',false);
+
+{const sb=document.getElementById('stickybar'),tn=document.querySelector('header .topnav');
+ const io=new IntersectionObserver(([e])=>{const on=!e.isIntersecting&&e.boundingClientRect.top<0;sb.classList.toggle('show',on);sb.setAttribute('aria-hidden',on?'false':'true');});
+ io.observe(tn);}
+</script>
+</body>
+</html>

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sản phẩm báo chí VnExpress | Nguyễn Kim Trang</title>
+<meta name="description" content="Portfolio của Nguyễn Kim Trang: điều phối dự án quảng cáo, chiến dịch IMC, KOL và báo chí.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#5E0F1C; --maroon-deep:#450A14; --frame:#141012;
+    --paper:#FFFFFF; --blush:#F7ECEC; --ink:#2B2326; --muted:#7A6A6D; --line:#EADCDD;
+    --marker:#F2C230; --marker-soft:#FFF3C4; --link:#5E0F1C;
+    --display:"Anton","Be Vietnam Pro",Impact,sans-serif;
+    --script:"Great Vibes","Brush Script MT",cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--frame);color:var(--ink);line-height:1.6;font-size:16.5px;padding:14px}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--marker);outline-offset:3px}
+  .narrow{max-width:68ch}
+
+  /* Khung panel như bảng ghim */
+  .on-maroon{background:var(--maroon)!important;color:#fff}
+  .on-maroon::after{color:#fff!important}
+
+  .todo{background:var(--marker-soft);border:1.5px dashed var(--marker);border-radius:6px;padding:1px 8px;font-size:.88em;color:#6B5200}
+
+  /* Nút */
+  .contact{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:10px 20px;border-radius:999px;border:1.5px solid var(--maroon);color:var(--maroon);text-decoration:none;font-weight:600;background:transparent}
+  .btn.primary{background:var(--maroon);color:#fff}
+  .on-maroon .btn{border-color:#fff;color:#fff}
+  .on-maroon .btn.primary{background:#fff;color:var(--maroon)}
+
+  /* Đầu trang */
+  .topnav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-weight:800;letter-spacing:.06em;color:var(--maroon);text-decoration:none;text-transform:uppercase}
+  .links{display:flex;gap:clamp(14px,4vw,48px)}
+  .links a{color:var(--maroon);text-decoration:none;font-weight:600;letter-spacing:.04em}
+  .links a:hover{text-decoration:underline}
+  .hero{position:relative;text-align:center;padding-top:28px;--ns:clamp(2.7rem,10.6vw,9.6rem)}
+  .bigname{font-family:var(--display);font-weight:400;font-size:var(--ns);line-height:1.12;color:var(--maroon);text-transform:uppercase;white-space:nowrap;letter-spacing:-.005em;position:relative;z-index:1;margin-top:clamp(24px,4vw,48px)}
+  .hero-mid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;margin-top:calc(var(--ns) * -.55)}
+  .tagline{text-align:left;max-width:16ch;color:var(--maroon);font-weight:500;line-height:1.35;font-size:1.05rem;justify-self:start;margin-top:calc(var(--ns) * .55)}
+  .tagline .num{display:block;font-family:var(--display);font-size:3.6rem;line-height:1.05;font-weight:400;white-space:nowrap}
+  .pic{position:relative;z-index:2}
+  .portrait{width:min(400px,72vw);margin:0 auto}
+  .portrait img{display:block;width:100%;height:auto}
+  .script{font-family:var(--script);color:var(--maroon);font-size:clamp(3.4rem,8vw,6.4rem);line-height:1;position:absolute;left:50%;bottom:-.12em;transform:translateX(-50%) rotate(-6deg);white-space:nowrap;z-index:3}
+  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:0;border-top:1px solid var(--line);padding-top:20px}
+  .hero-foot .mail{color:var(--maroon);font-weight:600;letter-spacing:.03em;text-decoration:none}
+
+  /* Tiêu đề các phần */
+  h2.sec{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;color:var(--maroon);margin-bottom:10px}
+  .on-maroon h2.sec{color:#fff}
+  .sec-intro{color:var(--muted);margin-bottom:28px}
+
+  /* Về tôi */
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start;margin-top:18px}
+  .story{min-height:300px}
+  .story-kicker{color:rgba(255,255,255,.7);font-size:.9rem;font-weight:600;margin-bottom:6px}
+  .story h3{font-size:1.45rem;font-weight:800;line-height:1.25;margin-bottom:14px}
+  .story .p{margin-bottom:12px}
+  .story ul.plain{padding-left:20px;margin-top:6px}
+  .story-body-in{animation:fadein .35s ease both}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .story-reset{margin-top:6px;background:none;border:0;color:#fff;font:inherit;font-weight:600;cursor:pointer;padding:0;text-decoration:underline}
+  .plan{background:var(--paper);color:var(--ink);border-radius:20px;padding:22px 22px 14px}
+  .plan-hint{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+  .years{position:relative;height:22px;margin-left:150px;margin-right:8px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+  .years span{position:absolute;transform:translateX(-50%)}
+  .years span:first-child{transform:none}
+  .row{display:flex;align-items:center;width:100%;min-height:58px;padding:8px 0;border:0;border-bottom:1px solid var(--line);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:10px}
+  .row:hover{background:var(--blush)}
+  .row[aria-pressed="true"]{background:var(--blush)}
+  .row .label{width:150px;flex:none;padding:0 14px 0 10px;font-size:.92rem;line-height:1.35;font-weight:600}
+  .row .label small{display:block;color:var(--muted);font-weight:400}
+  .track{position:relative;flex:1;height:24px;margin-right:8px;background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 1px),var(--line) calc(20% - 1px) 20%)}
+  .bar{position:absolute;top:0;height:100%;background:var(--maroon);opacity:.25;border-radius:6px;transition:opacity .2s}
+  .row:hover .bar,.row[aria-pressed="true"] .bar{opacity:1}
+  .bar.unknown,.bar.future{background:transparent;border:2px dashed var(--maroon)}
+  .inline-story{display:none}
+  ul.plain{padding-left:20px;margin-top:6px}
+  .clients{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:6px}
+  .clients b{flex-basis:100%;font-size:.9rem;font-weight:600;opacity:.75}
+  .chip{font-size:.82rem;padding:3px 10px;border-radius:999px;background:var(--blush);border:1px solid var(--line);color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip-btn{font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;background:#fff;color:var(--maroon);border:1.5px solid #fff;padding:5px 14px}
+  .chip-btn:hover{background:transparent;color:#fff}
+
+  /* Case IMC */
+  .case{background:var(--paper);border:1px solid var(--line);border-radius:20px;margin-bottom:24px;overflow:hidden}
+  .case-head{padding:26px 28px 18px;border-bottom:1px solid var(--line);background:var(--blush)}
+  .case-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:2rem;line-height:1.1;color:var(--maroon)}
+  .meta{color:var(--muted);font-size:.95rem;margin-top:4px}
+  .brief{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(--line)}
+  .brief div{padding:18px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .brief div:nth-child(2n){border-right:0}
+  .brief div:nth-last-child(-n+2){border-bottom:0}
+  .brief h4,.phases h4,.role h4,.result h4{font-size:.85rem;font-weight:600;color:var(--maroon);margin-bottom:4px}
+  .phases{padding:22px 28px}
+  .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+  .phase{border:1px solid var(--line);border-radius:14px;padding:16px}
+  .phase strong{display:block;margin-bottom:8px}
+  .phase strong em{font-style:normal;display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:var(--maroon);color:#fff;font-size:.8rem;margin-right:8px}
+  .role,.result{padding:18px 28px;border-top:1px solid var(--line)}
+  .role ul{padding-left:20px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:4px 28px 26px}
+  .thumb{aspect-ratio:4/3;border:1.5px dashed var(--marker);background:var(--marker-soft);border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;color:#6B5200;padding:8px}
+
+  /* Case ngắn */
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .mini{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px;color:var(--ink)}
+  .mini h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.6rem;color:var(--maroon);margin-bottom:2px}
+  .mini .tag{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+  .mini p{margin-bottom:10px}
+
+  /* Báo chí */
+  .press{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+  .facts{background:var(--paper);border:1px solid var(--line);border-radius:20px}
+  .facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border-bottom:0}
+  .facts dt{color:var(--muted)}
+  .facts dd{font-weight:600;text-align:right}
+  .logos{display:flex;flex-wrap:wrap;gap:8px}
+  .logos span{padding:8px 14px;border-radius:999px;background:var(--blush);color:var(--maroon);font-weight:600;font-size:.92rem}
+
+  /* Ô chi tiết khách hàng */
+  dialog.case-modal{border:0;border-radius:22px;padding:0;max-width:780px;width:calc(100% - 32px);max-height:88vh;color:var(--ink);background:var(--paper);box-shadow:0 24px 60px rgba(20,16,18,.4);margin:auto}
+  dialog.case-modal::backdrop{background:rgba(20,16,18,.7)}
+  .cm-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:24px 28px 18px;position:sticky;top:0;background:var(--maroon);color:#fff;z-index:1}
+  .cm-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:2.3rem;line-height:1.05}
+  .cm-head p{color:rgba(255,255,255,.78);margin-top:4px}
+  .cm-close{flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:transparent;font-size:1.3rem;cursor:pointer;color:#fff}
+  .cm-body{padding:22px 28px 28px}
+  .cm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+  .cm-stats div{background:var(--blush);border-radius:14px;padding:12px 14px}
+  .cm-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1.1;color:var(--maroon)}
+  .cm-stats span{font-size:.85rem;color:var(--muted)}
+  .cm-stats.deliv{grid-template-columns:repeat(3,1fr)}
+  .cm-stats.deliv b{font-family:"Be Vietnam Pro",sans-serif;font-weight:700;font-size:1.02rem;line-height:1.3}
+  .cm-stats:has(> div:nth-child(2):last-child){grid-template-columns:repeat(2,1fr);max-width:380px}
+  .cm-block{margin-bottom:18px}
+  .cm-block h4{font-size:.9rem;font-weight:700;color:var(--maroon);margin-bottom:4px}
+  .cm-block ul{padding-left:20px}
+  .cm-shots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+  .cm-shots.one{grid-template-columns:1fr}
+  .cm-shots.narrow{max-width:420px}
+  .cm-shots.two{grid-template-columns:1fr 1fr;align-items:center}
+  .cm-shots img{width:100%;height:auto;border-radius:14px;display:block}
+
+  /* Liên hệ */
+  footer.wrap h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;margin-bottom:12px}
+
+  @media (max-width:760px){
+    body{font-size:16px;padding:8px}
+    .links{gap:14px;font-size:.9rem}
+    .hero-mid{grid-template-columns:1fr;gap:0;margin-top:0}
+    .hero-mid > span{display:none}
+    .tagline{order:-1;max-width:none;text-align:center;justify-self:center;margin:16px 0 14px}
+    .tagline .num{display:inline;font-size:2.4rem;vertical-align:-4px;margin-right:6px}
+    .bigname{margin-top:18px}
+    .hero-foot{justify-content:center;text-align:center}
+    .about-grid{grid-template-columns:1fr}
+    .story{position:static;min-height:0}
+    .story-reset{display:none}
+    .plan{padding:16px 10px 8px}
+    .years{margin-left:8px;margin-right:8px}
+    .row{flex-wrap:wrap}
+    .row .label{width:100%;padding:0 8px 6px}
+    .track{flex:1 1 100%;margin:0 8px}
+    .inline-story{display:block;overflow:hidden;max-height:0;padding:0 10px;transition:max-height .3s ease}
+    .row[aria-pressed="true"] + .inline-story{max-height:1400px;padding:12px 10px 14px;background:var(--maroon);color:#fff;border-radius:0 0 12px 12px}
+    .inline-story .p{margin-bottom:10px;font-size:.95rem}
+    .brief{grid-template-columns:1fr}
+    .brief div{border-right:0!important;border-bottom:1px solid var(--line)!important}
+    .brief div:last-child{border-bottom:0!important}
+    .phase-grid,.mini-grid,.press{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);padding:4px 20px 22px}
+    .case-head,.phases,.role,.result,.brief div{padding-left:20px;padding-right:20px}
+    .cm-stats,.cm-shots{grid-template-columns:1fr 1fr}
+    .cm-shots.two,.cm-shots.one{grid-template-columns:1fr}
+    .cm-head,.cm-body{padding-left:20px;padding-right:20px}
+    .cm-head h3{font-size:1.9rem}
+  }
+
+  .bgroup{font-size:.82rem;font-weight:600;color:var(--muted);margin:10px 0 6px}
+  .toplist{list-style:none;padding:0!important}
+  .toplist li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+  .toplist b{color:var(--maroon)}
+  .press-prod{font-size:.9rem;opacity:.85;margin:-6px 0 18px}
+  .inds{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;border-top:1px solid rgba(255,255,255,.25)}
+  .ind{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.25);align-items:start}
+  .ind-name{font-family:var(--display);font-size:1.15rem;line-height:1.15;text-transform:uppercase}
+  .ind-name small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:.75rem;text-transform:none;opacity:.75;margin-top:2px}
+  .ind-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .ind-chips span{background:#fff;color:var(--maroon);border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:600}
+  .ind-chips .more-n{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);font-weight:500}
+  .ind-title{font-weight:700;margin:22px 0 10px}
+  .press-grid.two{grid-template-columns:1fr 1fr;max-width:560px}
+  @media (max-width:900px){.inds{grid-template-columns:1fr}}
+  @media (max-width:760px){.ind{grid-template-columns:1fr;gap:6px}}
+  .koc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .koc{margin:0}
+  .koc img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;border:2px solid var(--maroon)}
+  .koc figcaption{font-size:.75rem;color:var(--muted);line-height:1.3;margin-top:4px}
+  .koc figcaption b{display:block;color:var(--maroon);font-size:.8rem}
+  @media (max-width:760px){.koc-grid{grid-template-columns:repeat(3,1fr)}}
+  .ldp-link{display:inline-block;margin-top:22px}
+  /* Bảng ghim */
+  .board{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    grid-template-areas:"hero hero" "about journey" "work case" "press press" "contact contact"}
+  .board > *{position:relative;background:var(--paper);border-radius:26px;padding:40px clamp(20px,3.4vw,44px);min-width:0}
+  .board > :not(header)::after{content:"•••";position:absolute;top:16px;right:24px;letter-spacing:2px;font-size:1.1rem;color:var(--maroon);opacity:.8}
+  .board > .on-maroon::after{color:#fff}
+  .board > header{grid-area:hero} #ve-toi{grid-area:about} #hanh-trinh{grid-area:journey}
+  #cong-viec{grid-area:work} #case-study{grid-area:case} #bao-chi{grid-area:press} #lien-he{grid-area:contact}
+  .ptitle{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,4.8vw,3.9rem);line-height:1.02;color:var(--maroon);margin-bottom:16px}
+  .on-maroon .ptitle{color:#fff}
+  .mini-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .mini-stats span{background:#fff;color:var(--maroon);border-radius:10px;padding:6px 12px;font-size:.8rem;line-height:1.25}
+  .mini-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem}
+  .logo-row{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font-weight:700;font-size:.92rem;opacity:.9}
+  .quals{display:flex;flex-wrap:wrap;gap:8px;margin-top:18px}
+  .quals span{background:#fff;color:var(--maroon);border-radius:12px;padding:8px 14px;font-size:.85rem;font-weight:600;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+  .quals-title{font-weight:700;margin-top:22px;font-size:.95rem}
+
+  /* Công việc của tôi */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  a.work{text-decoration:none}
+  .work{display:block;text-align:left;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+  .work .img{display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--maroon);border:2px solid var(--maroon)}
+  .work img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .work:hover img{transform:scale(1.04)}
+  .work .type{display:flex;align-items:center;justify-content:center;height:100%;font-family:var(--display);color:#fff;font-size:1.9rem;text-transform:uppercase;text-align:center;line-height:1.05;padding:8px}
+  .work b{display:block;margin-top:8px;font-size:.88rem;color:var(--maroon);text-transform:uppercase;letter-spacing:.02em}
+  .work small{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
+
+  /* Case study */
+  .cs-intro{color:var(--muted);margin-bottom:8px}
+  .cs{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}
+  .cs-label{display:flex;justify-content:space-between;font-weight:700;color:var(--maroon);font-size:.9rem;margin-bottom:10px;text-transform:uppercase}
+  .cs-body{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;align-items:start}
+  .cs:nth-of-type(even) .cs-body{grid-template-columns:1.15fr 1fr}
+  .cs:nth-of-type(even) .cs-text{order:2}
+  .cs-text{background:var(--maroon);color:#fff;border-radius:14px;padding:16px;font-size:.92rem;line-height:1.5}
+  .cs-text p{margin-bottom:8px}
+  .cs-text .more{background:#fff;color:var(--maroon);border:0;border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer;margin-top:4px}
+  .cs-pics{display:grid;gap:6px}
+  .cs-pics.four{grid-template-columns:repeat(4,1fr)}
+  .cs-pics img{width:100%;border-radius:10px;display:block;border:2px solid var(--maroon)}
+
+  /* Báo chí */
+  .press-head{position:relative}
+  .press-head .script-acc{font-family:var(--script);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;color:#fff;position:absolute;left:-6px;top:-10px;transform:rotate(-8deg);opacity:.95;z-index:1}
+  .press-head .ptitle{padding-top:34px}
+  .press-facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:18px;opacity:.9;font-size:.92rem}
+  .press-facts b{font-family:var(--display);font-weight:400;font-size:1.3rem;margin-right:4px}
+  .press-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .pcard{background:#fff;color:var(--ink);border-radius:16px;overflow:hidden;text-align:left;border:0;font:inherit;padding:0;display:flex;flex-direction:column}
+  button.pcard{cursor:pointer}
+  .pcard .top{background:var(--blush);color:var(--maroon);font-family:var(--display);font-size:1.5rem;text-transform:uppercase;padding:18px 12px;min-height:86px;display:flex;align-items:flex-end;line-height:1.05}
+  .pcard .txt{padding:10px 12px 14px;font-size:.8rem;line-height:1.45}
+  .pcard .txt b{display:block;font-size:.78rem;color:var(--maroon);text-transform:uppercase;margin-bottom:2px}
+
+  #lien-he{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+  #lien-he .ptitle{margin:0}
+
+  @media (max-width:900px){
+    .board{grid-template-columns:1fr;grid-template-areas:"hero" "about" "journey" "work" "case" "press" "contact"}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
+    .press-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    .board{gap:8px}
+    .board > *{border-radius:20px;padding:30px 18px}
+    .cs-body,.cs:nth-of-type(even) .cs-body{grid-template-columns:1fr}
+    .cs:nth-of-type(even) .cs-text{order:0}
+  }
+  .ldp-hero h1{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--maroon);font-size:clamp(3.2rem,9vw,7rem);line-height:1;position:relative;padding-top:64px;margin-top:10px}
+  .ldp-hero .script-acc{font-family:var(--script);color:var(--maroon);font-size:clamp(2rem,4vw,3rem);line-height:1;text-transform:none;position:absolute;left:-4px;top:4px;transform:rotate(-6deg)}
+  .ldp-hero .lead{max-width:60ch;color:var(--muted);margin:14px 0 20px}
+  .ldp-hero .press-facts{color:var(--maroon)}
+  .ldp-board{grid-template-areas:none!important}
+  .ldp-board > *{grid-area:auto!important}
+  .ldp-board > .full{grid-column:1 / -1 !important}
+  .prod p.desc{margin-bottom:10px}
+  .prod .role{font-size:.9rem;opacity:.8;margin-bottom:14px;padding:0;border:0}
+  .slots{display:grid;grid-template-columns:repeat(3,1fr);gap:10px}
+  .slots .thumb{aspect-ratio:4/3}
+  .steps{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;counter-reset:st}
+  .steps li{list-style:none;background:#fff;color:var(--ink);border-radius:16px;padding:16px;font-size:.88rem;line-height:1.45}
+  .steps li::before{counter-increment:st;content:counter(st);display:block;font-family:var(--display);font-size:2rem;color:var(--maroon);line-height:1}
+  .steps li b{display:block;margin:4px 0 2px}
+  @media (max-width:900px){.steps{grid-template-columns:1fr 1fr}.slots{grid-template-columns:1fr 1fr}}
+  .prod-grid{display:grid;grid-template-columns:1fr 1.6fr;gap:28px;align-items:start}
+  .hard{margin-top:14px;background:var(--blush);color:var(--maroon);border-radius:14px;padding:14px 16px;font-size:.92rem}
+  .hard b{display:block;font-family:var(--display);font-weight:400;font-size:1.3rem;text-transform:uppercase}
+  .arts{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+  .arts.four{grid-template-columns:repeat(4,1fr);margin-top:16px}
+  .arts.three{grid-template-columns:repeat(3,1fr);margin-top:16px}
+  .art{display:flex;flex-direction:column;text-decoration:none;color:var(--ink);background:#fff;border:1.5px solid var(--line);border-radius:16px;overflow:hidden}
+  .art-img img{display:block;width:100%;aspect-ratio:16/9;object-fit:cover}
+  .art-brand{padding:12px 14px 0;font-size:.78rem;font-weight:700;color:var(--maroon);text-transform:uppercase}
+  .art-title{padding:4px 14px 6px;font-weight:600;line-height:1.35}
+  .art-go{margin-top:auto;padding:0 14px 14px;font-size:.85rem;color:var(--maroon);text-decoration:underline}
+  .art:hover{border-color:var(--maroon)}
+  @media (max-width:900px){.prod-grid,.arts.three{grid-template-columns:1fr}.arts.four{grid-template-columns:1fr 1fr}}
+  @media (max-width:560px){.arts{grid-template-columns:1fr}}
+  .vod .art-brand{padding:0}
+  .vods{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin-top:16px}
+  .vod{border:1.5px solid var(--line);border-radius:18px;padding:18px;display:flex;flex-direction:column;gap:12px}
+  .vod h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--maroon);font-size:1.7rem;line-height:1.1}
+  .vod-head p:last-child{font-size:.92rem;margin-top:4px}
+  .vod-stats{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+  .vod-stats div{background:var(--blush);border-radius:12px;padding:10px}
+  .vod-stats b{display:block;font-family:var(--display);font-weight:400;color:var(--maroon);font-size:1.4rem;line-height:1.1}
+  .vod-stats span{font-size:.78rem;color:var(--muted);line-height:1.3;display:block}
+  .vod-pics{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+  .vod-pics img{width:100%;display:block;border-radius:10px;aspect-ratio:16/9;object-fit:cover}
+  .vod-pics a{text-decoration:none;color:var(--maroon);font-size:.82rem;font-weight:600}
+  .vod-pics a span{display:block;margin-top:4px;text-decoration:underline}
+  @media (max-width:900px){.vods{grid-template-columns:1fr}}
+  .bn-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:16px;align-items:stretch}
+  .bn{background:#fff;color:var(--ink);border-radius:18px;padding:14px;margin:0;overflow:hidden}
+  .bn-img img{width:100%;display:block;border-radius:10px;aspect-ratio:16/10;object-fit:cover;object-position:top;margin-bottom:10px}
+  .bn .art-brand{padding:0}
+  .bn-t{font-weight:600;margin-top:4px;font-size:.92rem}
+  .bn-info{grid-column:1 / -1}
+  .bn-l{font-size:.8rem;font-weight:700;color:var(--muted);margin:12px 0 6px}
+  @media (max-width:900px){.bn-grid{grid-template-columns:1fr}}
+  .bts{display:grid;grid-template-columns:repeat(4,1fr);grid-auto-rows:170px;gap:12px;margin-top:16px}
+  .bts figure{margin:0;position:relative;border-radius:14px;overflow:hidden}
+  .bts .bts-wide{grid-column:span 2;grid-row:span 2}
+  .bts .bts-tall{grid-row:span 2}
+  .bts img{width:100%;height:100%;object-fit:cover;display:block}
+  .bts figcaption{position:absolute;left:0;right:0;bottom:0;padding:22px 12px 10px;font-size:.8rem;font-weight:600;color:#fff;background:linear-gradient(transparent,rgba(20,16,18,.8))}
+  @media (max-width:760px){.bts{grid-template-columns:1fr 1fr;grid-auto-rows:140px}.bts .bts-wide{grid-column:span 2}}
+  .awards{display:grid;grid-template-columns:1fr 1fr;gap:16px;margin-top:16px}
+  .award{display:grid;grid-template-columns:150px 1fr;gap:18px;align-items:start;border:1.5px solid var(--line);border-radius:18px;padding:18px;background:#fff}
+  .award img{width:100%;border-radius:8px;display:block;box-shadow:0 6px 18px rgba(20,16,18,.15)}
+  .award .art-brand{padding:0}
+  .award h3{font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--maroon);font-size:1.5rem;line-height:1.1;margin:4px 0 8px}
+  .aw-why{font-weight:600;font-size:.92rem}
+  .award blockquote{margin:12px 0 6px;padding-left:12px;border-left:3px solid var(--maroon);font-style:italic;font-size:.92rem}
+  .aw-by{font-size:.8rem;color:var(--muted)}
+  @media (max-width:900px){.awards{grid-template-columns:1fr}}
+  @media (max-width:480px){.award{grid-template-columns:1fr}.award img{max-width:180px}}
+</style>
+</head>
+<body>
+<div class="board ldp-board">
+<header class="panel full ldp-hero">
+  <nav class="topnav" aria-label="Điều hướng"><a class="brand" href="index.html">Trang Nguyễn</a><div class="links"><a href="index.html#bao-chi">Quay lại trang chính</a></div></nav>
+  <h1><span class="script-acc" aria-hidden="true">VnExpress</span>Sản phẩm báo chí</h1>
+  <p class="lead">Những sản phẩm quảng cáo tôi đã điều phối triển khai trên VnExpress từ 10.2024 đến nay, cho hơn 90 khách hàng thuộc 12 ngành.</p>
+  <div class="press-facts"><span><b>90+</b>khách hàng</span><span><b>12</b>ngành hàng</span><span><b>10</b>sale phối hợp</span><span><b>15 triệu đến 400+ triệu</b> mỗi dự án</span></div>
+</header>
+
+<section class="full prod" id="ghi-nhan">
+  <h2 class="ptitle">Ghi nhận</h2>
+  <p class="desc">Hai lần được FPT Online tuyên dương trong thời gian làm việc tại VnExpress.</p>
+  <div class="awards">
+    <article class="award"><img src="img/award-aves.webp" alt="Chứng nhận tuyên dương cấp 3, dự án Aves" loading="lazy"><div><p class="art-brand">Dự án Aves</p><h3>Tuyên dương cấp 3 và Huy chương Đổi mới, sáng tạo</h3><p class="aw-why">Hoàn thành dự án vượt tiến độ, cải thiện hiệu quả kinh doanh.</p><blockquote>“Cảm ơn sự phấn đấu và nỗ lực hết mình của em cho dự án Aves. Mong em giữ vững tinh thần nhiệt huyết này.”</blockquote><p class="aw-by">Trương Thị Thanh Hương, Phó phòng</p></div></article>
+    <article class="award"><img src="img/award-q1.webp" alt="Chứng nhận tuyên dương cấp 5, quý 1" loading="lazy"><div><p class="art-brand">Quý 1</p><h3>Tuyên dương cấp 5</h3><p class="aw-why">Hoàn thành xuất sắc nhiệm vụ được giao.</p><blockquote>“Chúc mừng em đã hoàn thành xuất sắc Q1, mong em sẽ luôn giữ vững phong độ và hoàn thành tốt các nhiệm vụ tiếp theo!”</blockquote><p class="aw-by">Trương Thị Thanh Hương, Phó phòng</p></div></article>
+  </div>
+</section>
+
+<section class="on-maroon full">
+  <h2 class="ptitle">Quy trình triển khai</h2>
+  <ol class="steps">
+    <li><b>Nhận brief</b>Nhận yêu cầu từ sale, làm rõ mục tiêu và sản phẩm khách đã mua.</li>
+    <li><b>Lên kế hoạch</b>Chốt lịch lên bài, vị trí banner, nội dung cần chuẩn bị.</li>
+    <li><b>Sản xuất nội dung</b>Làm việc với phóng viên, biên tập viên và đội thiết kế.</li>
+    <li><b>Duyệt và lên sóng</b>Gửi khách duyệt, chỉnh sửa, đảm bảo đúng quy định báo chí.</li>
+    <li><b>Nghiệm thu</b>Báo cáo số liệu, hoàn tất hồ sơ chứng từ và thanh lý.</li>
+  </ol>
+</section>
+
+<section class="full prod">
+  <h2 class="ptitle">Tin bài PR</h2>
+  <div class="prod-grid">
+    <div>
+      <p class="desc">Phối hợp với phóng viên ở nhiều lĩnh vực để trao đổi tin bài, điều chỉnh hướng bài và nội dung cho khách hàng sao cho đúng quy tắc báo chí.</p>
+      <p class="hard"><b>Điểm khó</b>Quy tắc và câu chữ của VnExpress cẩn thận, khó hơn báo thường. Cần một người đứng giữa khách hàng, phóng viên và biên tập viên, đề xuất cách viết để hai bên thống nhất. Đó là vai trò của tôi.</p>
+    </div>
+    <div class="arts"><a class="art" href="https://vnexpress.net/vinfast-ra-mat-dong-xe-may-dien-cao-cap-gia-tu-59-9-trieu-dong-5146767.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-vinfast.webp" alt="VinFast ra mắt dòng xe máy điện cao cấp, giá từ 59,9 triệu đồng" loading="lazy"></span><span class="art-brand">VinFast</span><span class="art-title">VinFast ra mắt dòng xe máy điện cao cấp, giá từ 59,9 triệu đồng</span><span class="art-go">Đọc trên VnExpress</span></a><a class="art" href="https://vnexpress.net/thiet-ke-tao-dau-an-cho-bo-suu-tap-xe-may-dien-smart-move-5147319.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-smartmove.webp" alt="Thiết kế tạo dấu ấn cho bộ sưu tập xe máy điện Smart Move" loading="lazy"></span><span class="art-brand">Smart Move</span><span class="art-title">Thiết kế tạo dấu ấn cho bộ sưu tập xe máy điện Smart Move</span><span class="art-go">Đọc trên VnExpress</span></a><a class="art" href="https://vnexpress.net/vib-uu-dai-lai-suat-mua-oto-tu-8-9-mot-nam-5145801.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-vib.webp" alt="VIB ưu đãi lãi suất mua ôtô từ 8,9% một năm" loading="lazy"></span><span class="art-brand">VIB</span><span class="art-title">VIB ưu đãi lãi suất mua ôtô từ 8,9% một năm</span><span class="art-go">Đọc trên VnExpress</span></a><a class="art" href="https://vnexpress.net/nhung-doi-moi-trong-he-sinh-thai-cham-soc-khach-hang-cua-prudential-5126800.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-prudential.webp" alt="Những đổi mới trong hệ sinh thái chăm sóc khách hàng của Prudential" loading="lazy"></span><span class="art-brand">Prudential</span><span class="art-title">Những đổi mới trong hệ sinh thái chăm sóc khách hàng của Prudential</span><span class="art-go">Đọc trên VnExpress</span></a></div>
+  </div>
+</section>
+
+<section class="on-maroon full prod" id="tin-dac-biet">
+  <h2 class="ptitle">Tin bài đặc biệt</h2>
+  <p class="desc">Ngoài tin bài thường, tôi triển khai các định dạng đặc biệt như Infographic, E-magazine, Interactive, kể cả bài tiếng Anh trên VnExpress International.</p>
+  <div class="arts four"><a class="art" href="https://e.vnexpress.net/news/business/eximbank-director-sees-people-trust-as-key-to-supporting-growing-smes-5146863.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-exim.webp" alt="Eximbank director sees people, trust as key to supporting growing SMEs" loading="lazy"></span><span class="art-brand">Eximbank, VnExpress International</span><span class="art-title">Eximbank director sees people, trust as key to supporting growing SMEs</span><span class="art-go">Đọc trên VnExpress</span></a><a class="art" href="https://e.vnexpress.net/news/business/future-of-banking-begins-with-people-ooi-huey-tyng-5140068.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-ooi.webp" alt="Future of banking begins with people: Ooi Huey Tyng" loading="lazy"></span><span class="art-brand">Eximbank, VnExpress International</span><span class="art-title">Future of banking begins with people: Ooi Huey Tyng</span><span class="art-go">Đọc trên VnExpress</span></a><a class="art" href="https://vnexpress.net/cach-kinh-te-tri-thuc-tao-them-gia-tri-cho-bat-dong-san-5139050.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-bds.webp" alt="Cách kinh tế tri thức tạo thêm giá trị cho bất động sản" loading="lazy"></span><span class="art-brand">Bất động sản</span><span class="art-title">Cách kinh tế tri thức tạo thêm giá trị cho bất động sản</span><span class="art-go">Đọc trên VnExpress</span></a><a class="art" href="https://vnexpress.net/kia-sportage-honda-cr-v-lua-chon-suv-co-c-hybrid-ban-cao-nhat-5086593.html" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-kia.webp" alt="Kia Sportage và Honda CR-V: lựa chọn SUV cỡ C hybrid bản cao nhất" loading="lazy"></span><span class="art-brand">Kia</span><span class="art-title">Kia Sportage và Honda CR-V: lựa chọn SUV cỡ C hybrid bản cao nhất</span><span class="art-go">Đọc trên VnExpress</span></a></div>
+</section>
+
+<section class="full prod" id="chuyen-trang">
+  <h2 class="ptitle">Chuyên trang thương hiệu</h2>
+  <p class="desc">Subfolder và landing page riêng của nhãn hàng ngay trên VnExpress. Tôi phối hợp với ban nội dung và ban kỹ thuật để thiết kế trang cho từng khách hàng.</p>
+  <div class="arts three"><a class="art" href="https://vnexpress.net/kinh-doanh/ebank/ngan-hang-sang-tao" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-ebank.webp" alt="Chuyên mục Ngân hàng sáng tạo" loading="lazy"></span><span class="art-brand">VIB</span><span class="art-title">Chuyên mục Ngân hàng sáng tạo</span><span class="art-go">Xem chuyên trang</span></a><a class="art" href="https://vnexpress.net/doi-song/kun-marathon" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-kun.webp" alt="Chuyên trang giải chạy Kun Marathon 2026" loading="lazy"></span><span class="art-brand">Kun</span><span class="art-title">Chuyên trang giải chạy Kun Marathon 2026</span><span class="art-go">Xem chuyên trang</span></a><a class="art" href="https://vnexpress.net/khoa-hoc-cong-nghe/khi-mat-lanh-song-tron-ven" target="_blank" rel="noopener"><span class="art-img"><img src="img/vne-khcn.webp" alt="Chuyên trang Khí mát lành, sống trọn vẹn" loading="lazy"></span><span class="art-brand">Daikin</span><span class="art-title">Chuyên trang Khí mát lành, sống trọn vẹn</span><span class="art-go">Xem chuyên trang</span></a></div>
+</section>
+
+<section class="full prod" id="vodcast">
+  <h2 class="ptitle">Vodcast</h2>
+  <p class="desc">Phối hợp với team sản xuất lên kịch bản, đề xuất chuyên gia, chốt lịch trình, site check và tham gia quay dựng. Mục tiêu là thông điệp vừa đúng quy tắc báo, vừa đạt mục tiêu truyền thông của thương hiệu.</p>
+  <div class="vods">
+    <article class="vod">
+      <div class="vod-head"><p class="art-brand">VIB</p><h3>Smart Money, Smart Life</h3><p>Chuỗi 4 tập với khách mời Kaity Nguyễn, Ngô Thùy Anh, Nick M, Thái Vân Linh, phát hành đồng thời trên 7 nền tảng.</p></div>
+      <div class="vod-stats"><div><b>14,2 triệu</b><span>lượt xem, đạt 178% KPI</span></div><div><b>88,2 triệu</b><span>lượt hiển thị, đạt 735% KPI</span></div><div><b>80.000+</b><span>lượt click về website VIB</span></div></div>
+      <div class="vod-pics"><img src="img/vib-cover.webp" alt="Smart Money Smart Life, ảnh bìa" loading="lazy"><img src="img/vib-ep1.webp" alt="Tập Sinh lời từ đam mê" loading="lazy"><img src="img/vib-ep2.webp" alt="Tập Sinh lời từ thời gian" loading="lazy"><img src="img/vib-ep3.webp" alt="Tập Sinh lời từ tư duy" loading="lazy"></div>
+    </article>
+    <article class="vod">
+      <div class="vod-head"><p class="art-brand">Prudential</p><h3>Talkshow chuyển giao di sản</h3><p>2 talkshow với chuyên gia pháp lý và tài chính. Mỗi talk gồm video teasing, full talk trên fanpage VnExpress, best cut Facebook, best cut TikTok và tin bài recap.</p></div>
+      <div class="vod-stats"><div><b>2</b><span>talkshow</span></div><div><b>10</b><span>sản phẩm nội dung</span></div><div><b>4</b><span>nền tảng: báo, Facebook, TikTok, fanpage</span></div></div>
+      <div class="vod-pics two">
+        <a href="https://vnexpress.net/can-chuan-bi-gi-khi-chuyen-giao-tai-san-cho-the-he-sau-5121642.html" target="_blank" rel="noopener"><img src="img/pru-talk1.webp" alt="Talk 1: Di sản không chỉ là tài sản" loading="lazy"><span>Talk 1: Di sản không chỉ là tài sản</span></a>
+        <a href="https://vnexpress.net/ba-buoc-can-chuan-bi-khi-len-ke-hoach-chuyen-giao-tai-san-5124719.html" target="_blank" rel="noopener"><img src="img/pru-talk2.webp" alt="Talk 2: Kế hoạch chuyển giao di sản" loading="lazy"><span>Talk 2: Kế hoạch chuyển giao di sản</span></a>
+      </div>
+    </article>
+  </div>
+</section>
+
+<section class="on-maroon full prod" id="banner">
+  <h2 class="ptitle">Banner</h2>
+  <p class="desc">Phối hợp với team thiết kế lên ý tưởng và thiết kế banner cho khách hàng trên trang báo, đặt lịch chạy theo từng vị trí và theo dõi impression, click, CTR để báo cáo cho khách.</p>
+  <div class="bn-grid">
+    <figure class="bn"><span class="bn-img"><img src="img/banner-vinfast.webp" alt="Banner VinFast phủ trang chuyên mục Xe trên VnExpress" loading="lazy"></span><p class="art-brand">VinFast</p><figcaption class="bn-t">Banner phủ chuyên mục Xe: masthead, hai bên trang và banner dính cuối trang.</figcaption></figure>
+    <figure class="bn"><span class="bn-img"><img src="img/banner-vna-amd.webp" alt="Banner Vietnam Airlines đường bay Hà Nội, Ahmedabad trên VnExpress" loading="lazy"></span><p class="art-brand">Vietnam Airlines</p><figcaption class="bn-t">Đường bay thẳng Hà Nội, Ahmedabad</figcaption></figure>
+    <figure class="bn"><span class="bn-img"><img src="img/banner-vna-tet.webp" alt="Banner Vietnam Airlines mở bán vé Tết trên VnExpress" loading="lazy"></span><p class="art-brand">Vietnam Airlines</p><figcaption class="bn-t">Mở bán vé Tết và Top 2 hãng hàng không được yêu thích</figcaption></figure>
+    <div class="bn bn-info"><p class="art-brand">Vietnam Airlines</p><p class="bn-t">Khách hàng banner thường xuyên, mỗi tháng nhiều chiến dịch, báo cáo số liệu theo từng chiến dịch.</p><p class="bn-l">Một số chiến dịch</p><div class="chips"><span class="chip">Đường bay Hà Nội, Ahmedabad</span><span class="chip">Top 2 hãng hàng không được yêu thích</span><span class="chip">Giải thưởng APEX 2026</span><span class="chip">Mở bán vé Tết</span><span class="chip">Hạng phổ thông đặc biệt</span><span class="chip">Đường bay Milan, Hà Nội</span><span class="chip">Đường bay TP.HCM, Copenhagen</span><span class="chip">Đường bay Hà Nội, Amsterdam</span><span class="chip">Đường bay TP.HCM, Phuket</span></div><p class="bn-l">Vị trí banner</p><div class="chips"><span class="chip">Super Masthead</span><span class="chip">Large 1</span><span class="chip">Leader Board mobile</span><span class="chip">Bottom Sticky</span></div></div>
+  </div>
+</section>
+
+<section class="full prod" id="hau-truong">
+  <h2 class="ptitle">Hậu trường</h2>
+  <p class="desc">Những buổi quay, buổi làm việc và sự kiện tôi trực tiếp có mặt để theo sát tiến độ và nội dung cho khách hàng.</p>
+  <div class="bts"><figure class="bts-wide"><img src="img/bts-1.webp" alt="Buổi quay phỏng vấn lãnh đạo tại văn phòng khách hàng" loading="lazy"><figcaption>Buổi quay phỏng vấn lãnh đạo tại văn phòng khách hàng</figcaption></figure><figure class="bts-tall"><img src="img/bts-2.webp" alt="Rà kịch bản cùng ekip trước giờ quay" loading="lazy"><figcaption>Rà kịch bản cùng ekip trước giờ quay</figcaption></figure><figure class="bts-tall"><img src="img/bts-3.webp" alt="Ghi hình phỏng vấn nhanh tại sự kiện" loading="lazy"><figcaption>Ghi hình phỏng vấn nhanh tại sự kiện</figcaption></figure><figure class="bts-wide"><img src="img/bts-4.webp" alt="Buổi làm việc với đối tác trước khi triển khai" loading="lazy"><figcaption>Buổi làm việc với đối tác trước khi triển khai</figcaption></figure><figure class="bts-wide"><img src="img/bts-5.webp" alt="Phỏng vấn tại sự kiện Porsche" loading="lazy"><figcaption>Phỏng vấn tại sự kiện Porsche</figcaption></figure><figure class="bts-wide"><img src="img/bts-6.webp" alt="Quay talkshow tại studio" loading="lazy"><figcaption>Quay talkshow tại studio</figcaption></figure><figure class="bts-tall"><img src="img/bts-7.webp" alt="Điều phối ghi hình nhiều máy quay" loading="lazy"><figcaption>Điều phối ghi hình nhiều máy quay</figcaption></figure><figure class="bts-tall"><img src="img/bts-8.webp" alt="Porsche Together, Macan and Friends" loading="lazy"><figcaption>Porsche Together, Macan and Friends</figcaption></figure><figure class="bts-wide"><img src="img/bts-9.webp" alt="Sự kiện thi đấu game VMC tại trung tâm thương mại" loading="lazy"><figcaption>Sự kiện thi đấu game VMC tại trung tâm thương mại</figcaption></figure><figure class="bts-wide"><img src="img/bts-10.webp" alt="Tại khu trưng bày sự kiện Porsche Raceborn 75" loading="lazy"><figcaption>Tại khu trưng bày sự kiện Porsche Raceborn 75</figcaption></figure></div>
+</section>
+
+
+
+
+
+
+
+
+<section class="on-maroon full">
+  <h2 class="ptitle">Khách hàng theo ngành</h2>
+  <div class="inds"><div class="ind"><p class="ind-name">Tài chính, ngân hàng<small>11 khách hàng</small></p><div class="ind-chips"><span>VIB</span><span>BIDV</span><span>Eximbank</span><span>OCB</span><span>Woori Bank</span><span>Citibank</span><span>Home Credit</span><span>Cathay Bank</span><span>VinaCapital</span><span>Bản Việt</span><span>VietBank</span></div></div><div class="ind"><p class="ind-name">Ô tô, xe máy<small>14 khách hàng</small></p><div class="ind-chips"><span>VinFast</span><span>BYD</span><span>Porsche</span><span>Bentley</span><span>Land Rover</span><span>Volvo</span><span>Ford</span><span>Suzuki</span><span>Motul</span><span>Sailun</span><span>MOVE</span><span>Trend Moto</span><span>LAM Scooter</span><span class="more-n">và 1 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Giáo dục<small>13 khách hàng</small></p><div class="ind-chips"><span>ĐH Bách Khoa</span><span>ĐH Tôn Đức Thắng</span><span>ĐH Kinh tế Luật</span><span>VGU</span><span>ĐH Công Thương</span><span>ĐH Bà Rịa Vũng Tàu</span><span>EEO Việt Nam</span><span class="more-n">và 6 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Y tế<small>12 khách hàng</small></p><div class="ind-chips"><span>Ecogreen</span><span>Signia</span><span>BV Quốc tế City</span><span>BV Đa khoa Phương Nam</span><span>Dược phẩm Thái Minh</span><span>Nha khoa Hoa Hồng</span><span>BV Gia An</span><span class="more-n">và 5 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Truyền thông, giải trí<small>10 khách hàng</small></p><div class="ind-chips"><span>VPlay VTV</span><span>Bel Việt Nam</span><span>OEG</span><span>Studio Sparx</span><span>Media Lab</span><span class="more-n">và 5 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Tiêu dùng, bán lẻ<small>9 khách hàng</small></p><div class="ind-chips"><span>Calofic</span><span>Con Cưng</span><span>Kun</span><span>A&B Shopping Mall</span><span>Pi Tower</span><span class="more-n">và 4 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Bảo hiểm<small>6 khách hàng</small></p><div class="ind-chips"><span>Manulife</span><span>Prudential</span><span>Bảo hiểm Xã hội</span><span>Hiệp hội Bảo hiểm</span><span class="more-n">và 2 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Công nghệ, điện<small>6 khách hàng</small></p><div class="ind-chips"><span>Realme</span><span>Garmin</span><span>Điện lực TP.HCM</span><span>Điện lực miền Nam</span><span>An Tiến</span><span class="more-n">và 1 khách hàng khác</span></div></div><div class="ind"><p class="ind-name">Vận tải, hàng không<small>5 khách hàng</small></p><div class="ind-chips"><span>Vietnam Airlines</span><span>Sân bay Tân Sơn Nhất</span><span>J&amp;T Express</span><span>BEST Express</span><span>be Group</span></div></div><div class="ind"><p class="ind-name">Bất động sản<small>4 khách hàng</small></p><div class="ind-chips"><span>Đất Hồ Tây</span><span>GI Realty</span><span>BDB Group</span><span>Cheil</span></div></div><div class="ind"><p class="ind-name">Du lịch, khách sạn<small>3 khách hàng</small></p><div class="ind-chips"><span>Saigontourist</span><span>White Palace</span><span>MAI</span></div></div><div class="ind"><p class="ind-name">Đa ngành<small>1 khách hàng</small></p><div class="ind-chips"><span>Vingroup</span></div></div></div>
+
+</section>
+
+<footer class="on-maroon full" id="lien-he">
+  <h2 class="ptitle">Cùng làm chiến dịch tiếp theo</h2>
+  <div class="contact">
+    <a class="btn primary" href="mailto:channy2108.work@gmail.com">Gửi email</a>
+    <a class="btn" href="https://www.linkedin.com/in/trany/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="index.html">Về trang chính</a>
+  </div>
+</footer>
+</div>
+</body>
+</html>
