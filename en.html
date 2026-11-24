@@ -1,0 +1,762 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Nguyen Kim Trang (Channy) | Communications campaign portfolio</title>
+<meta name="description" content="Portfolio of Nguyen Kim Trang: advertising project coordination, IMC campaigns, KOL management and press.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=Be+Vietnam+Pro:wght@400;500;600;700;800&family=Great+Vibes&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --maroon:#5E0F1C; --maroon-deep:#450A14; --frame:#141012;
+    --paper:#FFFFFF; --blush:#F7ECEC; --ink:#2B2326; --muted:#7A6A6D; --line:#EADCDD;
+    --marker:#F2C230; --marker-soft:#FFF3C4; --link:#5E0F1C;
+    --display:"Anton","Be Vietnam Pro",Impact,sans-serif;
+    --script:"Great Vibes","Brush Script MT",cursive;
+  }
+  *{box-sizing:border-box;margin:0;padding:0}
+  html{scroll-behavior:smooth}
+  @media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}*{animation:none!important;transition:none!important}}
+  body{font-family:"Be Vietnam Pro",system-ui,sans-serif;background:var(--frame);color:var(--ink);line-height:1.6;font-size:16.5px;padding:14px}
+  a{color:var(--link)}
+  a:focus-visible,button:focus-visible{outline:3px solid var(--marker);outline-offset:3px}
+  .narrow{max-width:68ch}
+
+  /* Khung panel như bảng ghim */
+  .on-maroon{background:var(--maroon)!important;color:#fff}
+  .on-maroon::after{color:#fff!important}
+
+  .todo{background:var(--marker-soft);border:1.5px dashed var(--marker);border-radius:6px;padding:1px 8px;font-size:.88em;color:#6B5200}
+
+  /* Nút */
+  .contact{display:flex;flex-wrap:wrap;gap:10px}
+  .btn{display:inline-block;padding:10px 20px;border-radius:999px;border:1.5px solid var(--maroon);color:var(--maroon);text-decoration:none;font-weight:600;background:transparent}
+  .btn.primary{background:var(--maroon);color:#fff}
+  .on-maroon .btn{border-color:#fff;color:#fff}
+  .on-maroon .btn.primary{background:#fff;color:var(--maroon)}
+
+  /* Đầu trang */
+  .topnav{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap}
+  .brand{font-weight:800;letter-spacing:.06em;color:var(--maroon);text-decoration:none;text-transform:uppercase}
+  .links{display:flex;gap:clamp(14px,4vw,48px)}
+  .links a{color:var(--maroon);text-decoration:none;font-weight:600;letter-spacing:.04em}
+  .links a:hover{text-decoration:underline}
+  .hero{position:relative;text-align:center;padding-top:28px;--ns:clamp(2.7rem,10.6vw,9.6rem)}
+  .bigname{font-family:var(--display);font-weight:400;font-size:var(--ns);line-height:1.12;color:var(--maroon);text-transform:uppercase;white-space:nowrap;letter-spacing:-.005em;position:relative;z-index:1;margin-top:clamp(24px,4vw,48px)}
+  .hero-mid{display:grid;grid-template-columns:1fr auto 1fr;align-items:center;gap:24px;margin-top:calc(var(--ns) * -.55)}
+  .tagline{text-align:left;max-width:16ch;color:var(--maroon);font-weight:500;line-height:1.35;font-size:1.05rem;justify-self:start;margin-top:calc(var(--ns) * .55)}
+  .tagline .num{display:block;font-family:var(--display);font-size:3.6rem;line-height:1.05;font-weight:400;white-space:nowrap}
+  .pic{position:relative;z-index:2}
+  .portrait{width:min(400px,72vw);margin:0 auto}
+  .portrait img{display:block;width:100%;height:auto}
+  .script{font-family:var(--script);color:var(--maroon);font-size:clamp(3.4rem,8vw,6.4rem);line-height:1;position:absolute;left:50%;bottom:-.12em;transform:translateX(-50%) rotate(-6deg);white-space:nowrap;z-index:3}
+  .hero-foot{display:flex;justify-content:space-between;align-items:center;gap:16px;flex-wrap:wrap;margin-top:0;border-top:1px solid var(--line);padding-top:20px}
+  .hero-foot .mail{color:var(--maroon);font-weight:600;letter-spacing:.03em;text-decoration:none}
+
+  /* Tiêu đề các phần */
+  h2.sec{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;color:var(--maroon);margin-bottom:10px}
+  .on-maroon h2.sec{color:#fff}
+  .sec-intro{color:var(--muted);margin-bottom:28px}
+
+  /* Về tôi */
+  .about-grid{display:grid;grid-template-columns:1fr 1.2fr;gap:32px;align-items:start;margin-top:18px}
+  .story{min-height:300px}
+  .story-kicker{color:rgba(255,255,255,.7);font-size:.9rem;font-weight:600;margin-bottom:6px}
+  .story h3{font-size:1.45rem;font-weight:800;line-height:1.25;margin-bottom:14px}
+  .story .p{margin-bottom:12px}
+  .story ul.plain{padding-left:20px;margin-top:6px}
+  .story-body-in{animation:fadein .35s ease both}
+  @keyframes fadein{from{opacity:0;transform:translateY(6px)}to{opacity:1;transform:none}}
+  .story-reset{margin-top:6px;background:none;border:0;color:#fff;font:inherit;font-weight:600;cursor:pointer;padding:0;text-decoration:underline}
+  .plan{background:var(--paper);color:var(--ink);border-radius:20px;padding:22px 22px 14px}
+  .plan-hint{font-size:.9rem;color:var(--muted);margin-bottom:14px}
+  .years{position:relative;height:22px;margin-left:150px;margin-right:8px;border-bottom:1px solid var(--line);font-size:.8rem;color:var(--muted)}
+  .years span{position:absolute;transform:translateX(-50%)}
+  
+  .row{display:flex;align-items:center;width:100%;min-height:58px;padding:8px 0;border:0;border-bottom:1px solid var(--line);background:none;font:inherit;color:inherit;text-align:left;cursor:pointer;border-radius:10px}
+  .row:hover{background:var(--blush)}
+  .row[aria-pressed="true"]{background:var(--blush)}
+  .row .label{width:150px;flex:none;padding:0 14px 0 10px;font-size:.92rem;line-height:1.35;font-weight:600}
+  .row .label small{display:block;color:var(--muted);font-weight:400}
+  .track{position:relative;flex:1;height:24px;margin-right:8px;background:repeating-linear-gradient(90deg,transparent 0 calc(20% - 1px),var(--line) calc(20% - 1px) 20%)}
+  .bar{position:absolute;top:0;height:100%;background:var(--maroon);opacity:.25;border-radius:6px;transition:opacity .2s}
+  .row:hover .bar,.row[aria-pressed="true"] .bar{opacity:1}
+  .bar.unknown,.bar.future{background:transparent;border:2px dashed var(--maroon)}
+  .inline-story{display:none}
+  ul.plain{padding-left:20px;margin-top:6px}
+  .clients{display:flex;flex-wrap:wrap;align-items:center;gap:8px;padding-top:6px}
+  .clients b{flex-basis:100%;font-size:.9rem;font-weight:600;opacity:.75}
+  .chip{font-size:.82rem;padding:3px 10px;border-radius:999px;background:var(--blush);border:1px solid var(--line);color:var(--ink)}
+  .chips{display:flex;flex-wrap:wrap;gap:6px}
+  .chip-btn{font:inherit;font-size:.88rem;font-weight:600;cursor:pointer;background:#fff;color:var(--maroon);border:1.5px solid #fff;padding:5px 14px}
+  .chip-btn:hover{background:transparent;color:#fff}
+
+  /* Case IMC */
+  .case{background:var(--paper);border:1px solid var(--line);border-radius:20px;margin-bottom:24px;overflow:hidden}
+  .case-head{padding:26px 28px 18px;border-bottom:1px solid var(--line);background:var(--blush)}
+  .case-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:2rem;line-height:1.1;color:var(--maroon)}
+  .meta{color:var(--muted);font-size:.95rem;margin-top:4px}
+  .brief{display:grid;grid-template-columns:repeat(2,1fr);border-bottom:1px solid var(--line)}
+  .brief div{padding:18px 28px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+  .brief div:nth-child(2n){border-right:0}
+  .brief div:nth-last-child(-n+2){border-bottom:0}
+  .brief h4,.phases h4,.role h4,.result h4{font-size:.85rem;font-weight:600;color:var(--maroon);margin-bottom:4px}
+  .phases{padding:22px 28px}
+  .phase-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:14px;margin-top:10px}
+  .phase{border:1px solid var(--line);border-radius:14px;padding:16px}
+  .phase strong{display:block;margin-bottom:8px}
+  .phase strong em{font-style:normal;display:inline-block;width:24px;height:24px;line-height:24px;text-align:center;border-radius:50%;background:var(--maroon);color:#fff;font-size:.8rem;margin-right:8px}
+  .role,.result{padding:18px 28px;border-top:1px solid var(--line)}
+  .role ul{padding-left:20px}
+  .gallery{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;padding:4px 28px 26px}
+  .thumb{aspect-ratio:4/3;border:1.5px dashed var(--marker);background:var(--marker-soft);border-radius:14px;display:flex;align-items:center;justify-content:center;text-align:center;font-size:.8rem;color:#6B5200;padding:8px}
+
+  /* Case ngắn */
+  .mini-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+  .mini{background:var(--paper);border:1px solid var(--line);border-radius:20px;padding:22px;color:var(--ink)}
+  .mini h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:1.6rem;color:var(--maroon);margin-bottom:2px}
+  .mini .tag{color:var(--muted);font-size:.9rem;margin-bottom:12px}
+  .mini p{margin-bottom:10px}
+
+  /* Báo chí */
+  .press{display:grid;grid-template-columns:1.1fr 1fr;gap:28px;align-items:start}
+  .facts{background:var(--paper);border:1px solid var(--line);border-radius:20px}
+  .facts div{display:flex;justify-content:space-between;gap:16px;padding:14px 20px;border-bottom:1px solid var(--line)}
+  .facts div:last-child{border-bottom:0}
+  .facts dt{color:var(--muted)}
+  .facts dd{font-weight:600;text-align:right}
+  .logos{display:flex;flex-wrap:wrap;gap:8px}
+  .logos span{padding:8px 14px;border-radius:999px;background:var(--blush);color:var(--maroon);font-weight:600;font-size:.92rem}
+
+  /* Ô chi tiết khách hàng */
+  dialog.case-modal{border:0;border-radius:22px;padding:0;max-width:780px;width:calc(100% - 32px);max-height:88vh;color:var(--ink);background:var(--paper);box-shadow:0 24px 60px rgba(20,16,18,.4);margin:auto}
+  dialog.case-modal::backdrop{background:rgba(20,16,18,.7)}
+  .cm-head{display:flex;justify-content:space-between;align-items:flex-start;gap:16px;padding:24px 28px 18px;position:sticky;top:0;background:var(--maroon);color:#fff;z-index:1}
+  .cm-head h3{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:2.3rem;line-height:1.05}
+  .cm-head p{color:rgba(255,255,255,.78);margin-top:4px}
+  .cm-close{flex:none;width:40px;height:40px;border-radius:50%;border:1.5px solid rgba(255,255,255,.6);background:transparent;font-size:1.3rem;cursor:pointer;color:#fff}
+  .cm-body{padding:22px 28px 28px}
+  .cm-stats{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-bottom:24px}
+  .cm-stats div{background:var(--blush);border-radius:14px;padding:12px 14px}
+  .cm-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.9rem;line-height:1.1;color:var(--maroon)}
+  .cm-stats span{font-size:.85rem;color:var(--muted)}
+  .cm-stats.deliv{grid-template-columns:repeat(3,1fr)}
+  .cm-stats.deliv b{font-family:"Be Vietnam Pro",sans-serif;font-weight:700;font-size:1.02rem;line-height:1.3}
+  .cm-stats:has(> div:nth-child(2):last-child){grid-template-columns:repeat(2,1fr);max-width:380px}
+  .cm-block{margin-bottom:18px}
+  .cm-block h4{font-size:.9rem;font-weight:700;color:var(--maroon);margin-bottom:4px}
+  .cm-block ul{padding-left:20px}
+  .cm-shots{display:grid;grid-template-columns:repeat(4,1fr);gap:10px;margin-top:8px}
+  .cm-shots.one{grid-template-columns:1fr}
+  .cm-shots.narrow{max-width:420px}
+  .cm-shots.two{grid-template-columns:1fr 1fr;align-items:center}
+  .cm-shots img{width:100%;height:auto;border-radius:14px;display:block}
+
+  /* Liên hệ */
+  footer.wrap h2{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.4rem,5.4vw,4rem);line-height:1.05;margin-bottom:12px}
+
+  @media (max-width:760px){
+    body{font-size:16px;padding:8px}
+    .links{gap:14px;font-size:.9rem}
+    .hero-mid{grid-template-columns:1fr;gap:0;margin-top:0}
+    .hero-mid > span{display:none}
+    .tagline{order:-1;max-width:none;text-align:center;justify-self:center;margin:16px 0 14px}
+    .tagline .num{display:inline;font-size:2.4rem;vertical-align:-4px;margin-right:6px}
+    .bigname{margin-top:18px}
+    .hero-foot{justify-content:center;text-align:center}
+    .about-grid{grid-template-columns:1fr}
+    .story{position:static;min-height:0}
+    .story-reset{display:none}
+    .plan{padding:16px 10px 8px}
+    .years{margin-left:8px;margin-right:8px}
+    .row{flex-wrap:wrap}
+    .row .label{width:100%;padding:0 8px 6px}
+    .track{flex:1 1 100%;margin:0 8px}
+    .inline-story{display:block;overflow:hidden;max-height:0;padding:0 10px;transition:max-height .3s ease}
+    .row[aria-pressed="true"] + .inline-story{max-height:1400px;padding:12px 10px 14px;background:var(--maroon);color:#fff;border-radius:0 0 12px 12px}
+    .inline-story .p{margin-bottom:10px;font-size:.95rem}
+    .brief{grid-template-columns:1fr}
+    .brief div{border-right:0!important;border-bottom:1px solid var(--line)!important}
+    .brief div:last-child{border-bottom:0!important}
+    .phase-grid,.mini-grid,.press{grid-template-columns:1fr}
+    .gallery{grid-template-columns:repeat(2,1fr);padding:4px 20px 22px}
+    .case-head,.phases,.role,.result,.brief div{padding-left:20px;padding-right:20px}
+    .cm-stats,.cm-shots{grid-template-columns:1fr 1fr}
+    .cm-shots.two,.cm-shots.one{grid-template-columns:1fr}
+    .cm-head,.cm-body{padding-left:20px;padding-right:20px}
+    .cm-head h3{font-size:1.9rem}
+  }
+
+  .bgroup{font-size:.82rem;font-weight:600;color:var(--muted);margin:10px 0 6px}
+  .toplist{list-style:none;padding:0!important}
+  .toplist li{display:flex;justify-content:space-between;padding:7px 0;border-bottom:1px solid var(--line)}
+  .toplist b{color:var(--maroon)}
+  .press-prod{font-size:.9rem;opacity:.85;margin:-6px 0 18px}
+  .inds{display:grid;grid-template-columns:1fr 1fr;column-gap:36px;border-top:1px solid rgba(255,255,255,.25)}
+  .ind{display:grid;grid-template-columns:150px 1fr;gap:12px;padding:12px 0;border-bottom:1px solid rgba(255,255,255,.25);align-items:start}
+  .ind-name{font-family:var(--display);font-size:1.15rem;line-height:1.15;text-transform:uppercase}
+  .ind-name small{display:block;font-family:"Be Vietnam Pro",sans-serif;font-size:.75rem;text-transform:none;opacity:.75;margin-top:2px}
+  .ind-chips{display:flex;flex-wrap:wrap;gap:6px}
+  .ind-chips span{background:#fff;color:var(--maroon);border-radius:999px;padding:3px 10px;font-size:.8rem;font-weight:600}
+  .ind-chips .more-n{background:transparent;color:#fff;border:1px solid rgba(255,255,255,.5);font-weight:500}
+  .ind-title{font-weight:700;margin:22px 0 10px}
+  .press-grid.two{grid-template-columns:1fr 1fr;max-width:560px}
+  @media (max-width:900px){.inds{grid-template-columns:1fr}}
+  @media (max-width:760px){.ind{grid-template-columns:1fr;gap:6px}}
+  .koc-grid{display:grid;grid-template-columns:repeat(6,1fr);gap:8px}
+  .koc{margin:0}
+  .koc img{width:100%;aspect-ratio:9/16;object-fit:cover;border-radius:10px;display:block;border:2px solid var(--maroon)}
+  .koc figcaption{font-size:.75rem;color:var(--muted);line-height:1.3;margin-top:4px}
+  .koc figcaption b{display:block;color:var(--maroon);font-size:.8rem}
+  @media (max-width:760px){.koc-grid{grid-template-columns:repeat(3,1fr)}}
+  .ldp-link{display:inline-block;margin-top:22px}
+  #ky-nang{grid-area:skills}
+  .sk-list{list-style:none;display:grid;grid-template-columns:repeat(3,1fr);gap:10px 28px}
+  .sk-list li{display:block;padding:12px 0 12px 22px;border-bottom:1px solid var(--line);font-weight:600;position:relative}
+  .sk-list li::before{content:"";position:absolute;left:0;top:19px;width:10px;height:10px;border-radius:3px;background:var(--maroon)}
+  .sk-chips{display:flex;flex-wrap:wrap;gap:6px;margin-top:8px}
+  .sk-chips span{background:var(--blush);color:var(--maroon);border-radius:999px;padding:2px 10px;font-size:.82rem}
+  @media (max-width:900px){.sk-list{grid-template-columns:1fr}}
+  .work[aria-pressed="true"] .img{outline:4px solid var(--maroon);outline-offset:3px}
+  .work[aria-pressed="true"] b::after{content:" ●";color:var(--maroon)}
+  .cs:first-of-type,.cs.first{border-top:0;margin-top:8px;padding-top:4px}
+  .cs.rev .cs-body{grid-template-columns:1.15fr 1fr}
+  .cs.rev .cs-text{order:2}
+  .cs-anim{animation:fadein .35s ease both}
+  .cs-text a.more{display:inline-block;text-decoration:none;margin-right:4px;margin-bottom:6px}
+  .cs-pics.two-up{grid-template-columns:1fr}
+  .cs-logos{display:flex;flex-wrap:wrap;gap:6px}
+  .cs-logos span{background:var(--blush);color:var(--maroon);border-radius:999px;padding:5px 12px;font-weight:600;font-size:.85rem}
+  @media (max-width:760px){.cs.rev .cs-body{grid-template-columns:1fr}.cs.rev .cs-text{order:0}}
+  .cs-detail .cm-stats{grid-template-columns:1fr 1fr;margin-bottom:18px}
+  .cs-detail .cm-stats.deliv{grid-template-columns:1fr}
+  .cs-detail .cm-shots,.cs-detail .cm-shots.two{grid-template-columns:1fr 1fr}
+  .cs-detail .cm-shots.one{grid-template-columns:1fr}
+  .cs-detail .koc-grid{grid-template-columns:repeat(3,1fr)}
+  .cs-detail .cm-block p,.cs-detail .cm-block li{font-size:.93rem}
+  .stickybar{position:fixed;top:10px;left:50%;transform:translate(-50%,-140%);width:min(1180px,calc(100% - 28px));z-index:50;display:flex;justify-content:space-between;align-items:center;gap:12px;background:rgba(255,255,255,.96);backdrop-filter:blur(8px);border-radius:999px;padding:12px 28px;box-shadow:0 8px 24px rgba(20,16,18,.25);transition:transform .3s ease}
+  .stickybar.show{transform:translate(-50%,0)}
+  .stickybar .links{display:flex;gap:clamp(12px,3vw,40px)}
+  .stickybar a{color:var(--maroon);text-decoration:none;font-weight:600}
+  .stickybar .brand{font-weight:800;letter-spacing:.06em;text-transform:uppercase}
+  html{scroll-padding-top:80px}
+  @media (max-width:560px){.stickybar{padding:10px 16px;font-size:.88rem}.stickybar .brand{display:none}.stickybar .links{width:100%;justify-content:space-between}}
+  .ongoing{display:block;margin-top:8px;font-style:normal;font-weight:700;font-size:.75rem;color:var(--maroon);background:var(--blush);border-radius:999px;padding:3px 10px;width:max-content}
+  .cm-update{text-align:center;padding:28px 12px}
+  .cm-update b{display:block;font-family:var(--display);font-weight:400;text-transform:uppercase;color:var(--maroon);font-size:1.8rem;margin-bottom:8px}
+  .cm-update p{color:var(--muted);max-width:42ch;margin:0 auto}
+  /* Bảng ghim */
+  .board{max-width:1180px;margin:0 auto;display:grid;grid-template-columns:1fr 1fr;gap:14px;
+    grid-template-areas:"hero hero" "about journey" "skills skills" "work case" "press press" "contact contact"}
+  .board > *{position:relative;background:var(--paper);border-radius:26px;padding:40px clamp(20px,3.4vw,44px);min-width:0}
+  .board > :not(header)::after{content:"•••";position:absolute;top:16px;right:24px;letter-spacing:2px;font-size:1.1rem;color:var(--maroon);opacity:.8}
+  .board > .on-maroon::after{color:#fff}
+  .board > header{grid-area:hero} #ve-toi{grid-area:about} #hanh-trinh{grid-area:journey}
+  #cong-viec{grid-area:work} #case-study{grid-area:case} #bao-chi{grid-area:press} #lien-he{grid-area:contact}
+  .ptitle{font-family:var(--display);font-weight:400;text-transform:uppercase;font-size:clamp(2.6rem,4.8vw,3.9rem);line-height:1.02;color:var(--maroon);margin-bottom:16px}
+  .on-maroon .ptitle{color:#fff}
+  .mini-stats{display:flex;flex-wrap:wrap;gap:8px;margin-top:22px}
+  .mini-stats span{background:#fff;color:var(--maroon);border-radius:10px;padding:6px 12px;font-size:.8rem;line-height:1.25}
+  .mini-stats b{display:block;font-family:var(--display);font-weight:400;font-size:1.25rem}
+  .logo-row{display:flex;flex-wrap:wrap;gap:6px 16px;margin-top:16px;font-weight:700;font-size:.92rem;opacity:.9}
+  .quals{display:flex;flex-wrap:wrap;gap:8px;margin-top:10px}
+  .quals span{background:#fff;color:var(--maroon);border-radius:12px;padding:8px 14px;font-size:.85rem;font-weight:600;box-shadow:0 2px 0 rgba(0,0,0,.15)}
+  .quals-title{font-weight:700;margin-top:22px;font-size:.95rem}
+  .ed-list{list-style:none;margin-top:8px;display:grid;gap:8px}
+  .ed-list li{display:grid;grid-template-columns:130px 1fr;gap:12px;background:rgba(255,255,255,.08);border-radius:12px;padding:10px 14px}
+  .ed-time{font-size:.8rem;opacity:.75;padding-top:2px}
+  .ed-main{font-size:.85rem;opacity:.9;line-height:1.45}
+  .ed-main b{display:block;font-size:.95rem;opacity:1}
+  @media (max-width:520px){.ed-list li{grid-template-columns:1fr;gap:2px}}
+
+  /* Công việc của tôi */
+  .work-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:18px}
+  a.work{text-decoration:none}
+  .work{display:block;text-align:left;background:none;border:0;padding:0;font:inherit;color:inherit;cursor:pointer}
+  .work .img{display:block;aspect-ratio:4/3;border-radius:16px;overflow:hidden;background:var(--maroon);border:2px solid var(--maroon)}
+  .work img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .3s}
+  .work:hover img{transform:scale(1.04)}
+  .work .type{display:flex;align-items:center;justify-content:center;height:100%;font-family:var(--display);color:#fff;font-size:1.9rem;text-transform:uppercase;text-align:center;line-height:1.05;padding:8px}
+  .work b{display:block;margin-top:8px;font-size:.88rem;color:var(--maroon);text-transform:uppercase;letter-spacing:.02em}
+  .work small{display:block;font-size:.82rem;color:var(--muted);line-height:1.4}
+
+  /* Case study */
+  .cs-intro{color:var(--muted);margin-bottom:8px}
+  .cs{border-top:1px solid var(--line);padding-top:20px;margin-top:20px}
+  .cs-label{display:flex;justify-content:space-between;font-weight:700;color:var(--maroon);font-size:.9rem;margin-bottom:10px;text-transform:uppercase}
+  .cs-body{display:grid;grid-template-columns:1fr 1.15fr;gap:12px;align-items:start}
+  .cs-text{background:var(--maroon);color:#fff;border-radius:14px;padding:16px;font-size:.92rem;line-height:1.5}
+  .cs-text p{margin-bottom:8px}
+  .cs-text .more{background:#fff;color:var(--maroon);border:0;border-radius:999px;padding:6px 14px;font:inherit;font-weight:700;font-size:.85rem;cursor:pointer;margin-top:4px}
+  .cs-pics{display:grid;gap:6px}
+  .cs-pics.four{grid-template-columns:repeat(4,1fr)}
+  .cs-pics img{width:100%;border-radius:10px;display:block;border:2px solid var(--maroon)}
+
+  /* Báo chí */
+  .press-head{position:relative}
+  .press-head .script-acc{font-family:var(--script);font-size:clamp(2rem,3.6vw,2.8rem);line-height:1;color:#fff;position:absolute;left:-6px;top:-10px;transform:rotate(-8deg);opacity:.95;z-index:1}
+  .press-head .ptitle{padding-top:34px}
+  .press-facts{display:flex;flex-wrap:wrap;gap:8px 20px;margin-bottom:18px;opacity:.9;font-size:.92rem}
+  .press-facts b{font-family:var(--display);font-weight:400;font-size:1.3rem;margin-right:4px}
+  .press-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:10px}
+  .pcard{background:#fff;color:var(--ink);border-radius:16px;overflow:hidden;text-align:left;border:0;font:inherit;padding:0;display:flex;flex-direction:column}
+  button.pcard{cursor:pointer}
+  .pcard .top{background:var(--blush);color:var(--maroon);font-family:var(--display);font-size:1.5rem;text-transform:uppercase;padding:18px 12px;min-height:86px;display:flex;align-items:flex-end;line-height:1.05}
+  .pcard .txt{padding:10px 12px 14px;font-size:.8rem;line-height:1.45}
+  .pcard .txt b{display:block;font-size:.78rem;color:var(--maroon);text-transform:uppercase;margin-bottom:2px}
+
+  #lien-he{display:flex;flex-wrap:wrap;justify-content:space-between;align-items:center;gap:20px}
+  #lien-he .ptitle{margin:0}
+
+  @media (max-width:900px){
+    .board{grid-template-columns:1fr;grid-template-areas:"hero" "about" "journey" "skills" "work" "case" "press" "contact"}
+    .work-grid{grid-template-columns:repeat(2,1fr)}
+    .press-grid{grid-template-columns:repeat(2,1fr)}
+  }
+  @media (max-width:760px){
+    .board{gap:8px}
+    .board > *{border-radius:20px;padding:30px 18px}
+    .cs-body{grid-template-columns:1fr}
+  }
+  /* Chuyển ngôn ngữ */
+  .lang{display:inline-flex;flex:none;border:1.5px solid var(--maroon);border-radius:999px;overflow:hidden;font-size:.8rem;font-weight:700;letter-spacing:.06em}
+  .lang a{padding:4px 11px;color:var(--maroon);text-decoration:none}
+  .lang a:hover{background:var(--blush)}
+  .lang a[aria-current="true"]{background:var(--maroon);color:#fff}
+  @media (max-width:560px){.stickybar .lang{display:none}}
+</style>
+<link rel="alternate" hreflang="vi" href="https://channy2108work.github.io/index.html">
+<link rel="alternate" hreflang="en" href="https://channy2108work.github.io/en.html">
+</head>
+<body>
+<nav class="stickybar" id="stickybar" aria-label="Quick navigation" aria-hidden="true">
+  <a class="brand" href="#">Trang Nguyen</a>
+  <div class="links"><a href="#ve-toi">About</a><a href="#ky-nang">Skills</a><a href="#cong-viec">Work</a><a href="#bao-chi">Press</a><a href="#lien-he">Contact</a></div>
+  <span class="lang" role="group" aria-label="Language"><a href="index.html" lang="vi" hreflang="vi">VN</a><a href="en.html" lang="en" hreflang="en" aria-current="true">EN</a></span>
+</nav>
+<div class="board">
+<header class="panel">
+  <nav class="topnav" aria-label="Navigation">
+    <a class="brand" href="#">Trang Nguyen</a>
+    <div class="links"><a href="#ve-toi">About</a><a href="#ky-nang">Skills</a><a href="#cong-viec">Work</a><a href="#bao-chi">Press</a><a href="#lien-he">Contact</a></div>
+    <span class="lang" role="group" aria-label="Language"><a href="index.html" lang="vi" hreflang="vi">VN</a><a href="en.html" lang="en" hreflang="en" aria-current="true">EN</a></span>
+  </nav>
+  <div class="hero">
+    <h1 class="bigname"><span class="fullname">Nguyễn Kim Trang</span></h1>
+    <div class="hero-mid">
+      <p class="tagline"><span class="num">4 years</span>of seeing the craft through a media lens</p>
+      <div class="pic">
+        <figure class="portrait"><img src="img/hero.webp" alt="Portrait of Nguyen Kim Trang" width="900" height="978"></figure>
+        <p class="script" aria-hidden="true">Channy</p>
+      </div>
+      <span aria-hidden="true"></span>
+    </div>
+    <div class="hero-foot">
+      <a class="mail" href="mailto:channy2108.work@gmail.com">channy2108.work@gmail.com</a>
+      <div class="contact">
+        <a class="btn primary" href="mailto:channy2108.work@gmail.com">Send email</a>
+        <a class="btn" href="https://www.linkedin.com/in/trany/" target="_blank" rel="noopener">LinkedIn</a>
+        <a class="btn" href="cv.pdf" download="CV_Nguyen_Kim_Trang.pdf">Download CV</a>
+      </div>
+    </div>
+  </div>
+</header>
+
+<section class="on-maroon" id="ve-toi" aria-live="polite">
+  <h2 class="ptitle">About me</h2>
+  <div class="story" id="story">
+    <p class="story-kicker" id="story-kicker">Introduction</p>
+    <h3 id="story-title">Hi, I'm Trang</h3>
+    <div id="story-body"></div>
+    <button class="story-reset" id="story-reset" type="button" hidden>Back to introduction</button>
+  </div>
+  <div class="mini-stats">
+    <span><b>4 years</b>in ads and media</span>
+    <span><b>90+</b>clients at VnExpress</span>
+    <span><b>6</b>key agency projects</span>
+  </div>
+</section>
+
+<section class="on-maroon" id="hanh-trinh">
+  <h2 class="ptitle">Journey</h2>
+  <div class="plan" aria-label="Career path">
+    <p class="plan-hint">Click each stage to read its story in About me</p>
+    <div class="years" aria-hidden="true">
+      <span style="left:10%">2026</span><span style="left:30%">2025</span><span style="left:50%">2024</span><span style="left:70%">2023</span><span style="left:90%">2022</span>
+    </div>
+    <div id="rows"></div>
+  </div>
+  <div class="edu">
+    <p class="quals-title">Education</p>
+    <ul class="ed-list"><li><span class="ed-time">2019 to 2022</span><span class="ed-main"><b>University of Economics and Finance, HCMC (UEF)</b>E-commerce, Digital Marketing. GPA 3.24/4</span></li><li><span class="ed-time">2020 to 2023</span><span class="ed-main"><b>Head of the E-Commerce Club</b>University of Economics and Finance, HCMC</span></li></ul>
+    <p class="quals-title">Achievements</p>
+    <ul class="ed-list"><li><span class="ed-time">May 2021 to Jun 2021</span><span class="ed-main"><b>Top 11, Digital Marketing Competition</b>Organized by Company Insider</span></li><li><span class="ed-time">Dec 2020 to May 2021</span><span class="ed-main"><b>Top 3, Science Research</b>Faculty of Information Technology, University of Economics and Finance, HCMC</span></li></ul>
+    <p class="quals-title">Certificates</p>
+    <div class="quals"><span>LinkedIn: Project Management</span><span>LinkedIn: Marketing Analytics</span></div>
+  </div>
+</section>
+
+<section id="ky-nang">
+  <h2 class="ptitle">Skills</h2>
+  <ul class="sk-list"><li>Building executive plans</li><li>Booking KOLs, KOCs and press</li><li>Keeping work on brand</li><li>Reading ad data: Google, Facebook, TikTok, press</li><li>Handling paperwork: contracts, acceptance</li><li class="sk-tools">Tools <span class="sk-chips"><span>ChatGPT</span><span>Claude</span><span>Canva</span><span>Figma</span><span>CapCut</span></span></li></ul>
+</section>
+
+<section id="cong-viec">
+  <h2 class="ptitle">My work</h2>
+  <div class="work-grid"><button class="work" type="button" data-group="press" aria-pressed="false" aria-controls="case-study"><span class="img"><span class="type">Press<br>VnExpress</span></span><b>Press and PR</b><small>PR articles, events and banners for over 90 clients.</small></button><button class="work" type="button" data-group="imc" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-imc.webp" alt="Danh Thanh campaign" loading="lazy"></span><b>IMC campaigns</b><small>Planning and running multichannel campaigns.</small></button><button class="work" type="button" data-group="kol" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-kol.webp" alt="Trang, manager of the Seethesheep channel" loading="lazy"></span><b>KOL management</b><small>Seethesheep channel, 51.5K followers, 22 brand partners.</small></button><button class="work" type="button" data-group="media" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-media.webp" alt="Oishi advertising" loading="lazy"></span><b>Media advertising</b><small>Managing ads, tracking KPIs and reporting.</small></button><button class="work" type="button" data-group="video" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-video.webp" alt="Lobster Bay TikTok video" loading="lazy"></span><b>Short video</b><small>Producing TikTok video series for brands.</small></button><button class="work" type="button" data-group="pack" aria-pressed="false" aria-controls="case-study"><span class="img"><img src="img/tile-pack.webp" alt="Trust Farm packaging" loading="lazy"></span><b>Packaging and identity</b><small>Refreshing packaging, logo and POSM with the creative team.</small></button></div>
+</section>
+
+<section id="case-study" aria-live="polite">
+  <h2 class="ptitle">Case study</h2>
+  <p class="cs-intro">Click each area in My work to see the matching case.</p>
+  <article class="cs cs-full" data-group="imc" hidden>
+    <div class="cs-label"><span>Đảnh Thạnh</span><span>360 degree campaign</span></div>
+    <div class="cs-detail">
+    <div class="cm-stats"><div><b>+10%</b><span>fanpage followers after 3 months</span></div><div><b>+300,000</b><span>post engagements</span></div><div><b>+8,500,000</b><span>video views</span></div><div><b>3 times</b><span>client renewed the contract</span></div></div>
+    <div class="cm-block"><h4>Overview</h4><p>This was the first 360 degree marketing project I was given, and I learned a great deal from both the project and the client. Đảnh Thạnh is a 30 year old Vietnamese mineral water brand facing strong competition. The project aimed to refresh the brand in consumers' eyes and raise awareness among new customers.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><ul><li>The client wanted to launch right after the plan was approved and the contract signed.</li><li>The team had no time to prepare content in advance. The workload was heavy and the preparation time very short.</li></ul></div>
+    <div class="cm-block"><h4>Solution</h4><ul><li>Spent one day understanding the brand and the execution plan, and finding the right people for the project.</li><li>Worked closely with the brand team on every item to keep quality and deadlines.</li><li>Proactively learned new skills to apply to the project, which deepened my understanding of marketing.</li></ul></div>
+    <div class="cm-block"><h4>Deliverables</h4><div class="chips"><span class="chip">Facebook social posts</span><span class="chip">TikTok product videos</span><span class="chip">Facebook Ads</span><span class="chip">Google Ads</span><span class="chip">Nano KOC booking</span><span class="chip">Pages, groups</span></div></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul><li>Drafted and signed the contract between both parties.</li><li>Worked directly with the client and internal team, from ideas to execution.</li><li>Booked KOCs, pages and groups.</li><li>Weekly and monthly ad reports.</li><li>Guided visuals and content in line with the marketing plan.</li></ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots one"><img src="img/danhthanh.webp" alt="Danh Thanh, work sample 1" loading="lazy"></div>
+    </div>
+  </div>
+  </article>
+  <article class="cs" data-group="video" hidden>
+    <div class="cs-label"><span>Lobster Bay</span><span>Building a TikTok channel</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>30 videos in 3 shooting days, starring restaurant staff who had never been in front of a camera.</p><p>Result: 55,000 followers after 3 months.</p><button class="more" type="button" data-case="lobsterbay">View details</button></div>
+      <div class="cs-pics four"><img src="img/lobsterbay-1.webp" alt="Lobster Bay video" loading="lazy"><img src="img/lobsterbay-2.webp" alt="Lobster Bay video" loading="lazy"><img src="img/lobsterbay-3.webp" alt="Lobster Bay video" loading="lazy"><img src="img/lobsterbay-4.webp" alt="Lobster Bay video" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs rev" data-group="video" hidden>
+    <div class="cs-label"><span>Blackstones</span><span>Winning a client back</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Took over a TikTok video project when the client was asking to end the contract. Renegotiated, recommitted to KPIs and reassigned roles in the team.</p><p>Result: 200% of KPI, client renewed twice.</p><button class="more" type="button" data-case="blackstones">View details</button></div>
+      <div class="cs-pics four"><img src="img/blackstones-1.webp" alt="Blackstones video" loading="lazy"><img src="img/blackstones-2.webp" alt="Blackstones video" loading="lazy"><img src="img/blackstones-3.webp" alt="Blackstones video" loading="lazy"><img src="img/blackstones-4.webp" alt="Blackstones video" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs cs-full" data-group="pack" hidden>
+    <div class="cs-label"><span>Vietinter Foods</span><span>Packaging and identity</span></div>
+    <div class="cs-detail">
+    <div class="cm-stats deliv">
+      <div><b>Frozen meat packaging</b><span>Trust Farm</span></div>
+      <div><b>Logo and identity</b><span>Vietinter Foods</span></div>
+      <div><b>POSM materials</b><span>At point of sale</span></div>
+    </div>
+    <div class="cm-block"><h4>Overview</h4><p>Worked with Trust Farm, a Vietinter Foods brand, to refresh the packaging of its frozen meat line and make it feel closer to Vietnamese consumers. In parallel, redesigned the logo and POSM materials for Vietinter Foods.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><ul>
+      <li>The client wanted Trust Farm to stand out more to Vietnamese consumers.</li>
+      <li>It was my first time working with a very meticulous client.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Solution</h4><ul>
+      <li>Developed ideas with the creative team from Vietnamese lacquer painting, using brushstrokes and colour to create a design both distinctive and familiar to Vietnamese people.</li>
+      <li>Through our meetings, I learned to understand the client's needs correctly, then worked with the design team to deliver work that won the client over.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul>
+      <li>Drafted and signed the contract between both parties.</li>
+      <li>Worked directly with the client and internal team, from ideas to execution.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots two"><img src="img/vf-1.webp" alt="Trust Farm packaging for beef shank, chicken breast and pork ribs" loading="lazy"><img src="img/vf-4.webp" alt="Vietinter Foods office identity set" loading="lazy"><img src="img/vf-2.webp" alt="Trust Farm beef shank packaging options" loading="lazy"><img src="img/vf-3.webp" alt="Trust Farm beef shank packaging mockup" loading="lazy"></div>
+    </div>
+  </div>
+  </article>
+  <article class="cs" data-group="media" hidden>
+    <div class="cs-label"><span>Bosch</span><span>Media advertising</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Managed ads through a third party partner, explaining metrics and benchmarking against competitors every month.</p><p>Result: 212.25% engagement and 165.86% reach against KPI, client renewed 3 times.</p><button class="more" type="button" data-case="bosch">View details</button></div>
+      <div class="cs-pics"><img src="img/bosch.webp" alt="Bosch advertising" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs rev" data-group="media" hidden>
+    <div class="cs-label"><span>Oishi</span><span>Media advertising</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Large KPI volume and tight deadlines, balancing cash flow while still hitting every KPI.</p><p>Result: 100% of KPI, 108.57% reach against KPI, client renewed twice.</p><button class="more" type="button" data-case="oishi">View details</button></div>
+      <div class="cs-pics"><img src="img/oishi-1.webp" alt="Oishi advertising" loading="lazy"><img src="img/oishi-2.webp" alt="Oishi advertising" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs" data-group="press" hidden>
+    <div class="cs-label"><span>VnExpress</span><span>PR articles</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>VnExpress has stricter writing rules than most news sites. I stand between the client, journalists and editors, adjusting the angle and suggesting wording so both sides agree.</p><a class="more" href="baochi-en.html">See the work</a></div>
+      <div class="cs-pics two-up"><img src="img/vne-vinfast.webp" alt="VinFast launches a premium electric scooter line from VND 59.9 million" loading="lazy"><img src="img/vne-vib.webp" alt="VIB offers car loan rates from 8.9% a year" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs rev" data-group="press" hidden>
+    <div class="cs-label"><span>VnExpress</span><span>Brand hubs</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Worked with the content and technical teams to design a dedicated landing page for each brand, right on the news site.</p><p>Examples: the Innovative Banking section, the Kun Marathon hub, the Fresh Air hub.</p><a class="more" href="baochi-en.html#chuyen-trang">See brand hubs</a></div>
+      <div class="cs-pics two-up"><img src="img/vne-ebank.webp" alt="Innovative Banking section" loading="lazy"><img src="img/vne-kun.webp" alt="Kun Marathon 2026 hub" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs" data-group="press" hidden>
+    <div class="cs-label"><span>VnExpress</span><span>Vodcast</span></div>
+    <div class="cs-body">
+      <div class="cs-text"><p>Worked with the production team on scripts, expert suggestions, shoot scheduling, site checks and filming.</p><p>VIB Smart Money, Smart Life: 14.2 million views, 178% of KPI.</p><a class="more" href="baochi-en.html#vodcast">See vodcasts</a></div>
+      <div class="cs-pics two-up"><img src="img/vib-ep1.webp" alt="VIB vodcast" loading="lazy"><img src="img/pru-talk1.webp" alt="Prudential talk show" loading="lazy"></div>
+    </div>
+  </article>
+  <article class="cs cs-full" data-group="kol" hidden>
+    <div class="cs-label"><span>Seethesheep</span><span>KOL management</span></div>
+    <div class="cs-detail">
+    <div class="cm-stats"><div><b>51.5K</b><span>followers</span></div><div><b>3.6M</b><span>likes</span></div><div><b>22</b><span>brand partners</span></div><div><b>1.8M</b><span>views on the top sponsored video</span></div></div>
+    <div class="cm-block"><h4>About the channel</h4><p>A lifestyle vlog about travel, beauty and everyday life, told with a funny, down to earth voice. Sponsored content is woven into everyday situations such as skits, POVs and diaries, so viewers don't feel they are watching an ad.</p></div>
+    <div class="cm-block"><h4>What I do</h4><ul><li>Advise the KOC on content direction when working with brands.</li><li>Support filming and photo shoots.</li><li>Handle contracts, acceptance and payments.</li><li>Work with partners.</li></ul></div>
+    <div class="cm-block"><h4>Brand partners</h4><p class="bgroup">Beauty and skincare</p><div class="chips"><span class="chip">Cỏ Mềm</span><span class="chip">3CE</span><span class="chip">Glamrr Q</span><span class="chip">Kiehl's</span><span class="chip">SKIN1004</span><span class="chip">Dr.G</span><span class="chip">Feld Apotheke</span><span class="chip">Surmedic</span><span class="chip">Jessup Beauty</span><span class="chip">Dememoria</span></div><p class="bgroup">Food and drink</p><div class="chips"><span class="chip">Nescafé</span><span class="chip">KitKat</span><span class="chip">Coca-Cola</span><span class="chip">Mentos</span><span class="chip">Chupa Chups</span><span class="chip">Reski Hotpot</span></div><p class="bgroup">Tech, shopping, finance</p><div class="chips"><span class="chip">Lazada</span><span class="chip">be</span><span class="chip">SkyJoy x VPBank</span><span class="chip">JBL</span><span class="chip">Hollyland</span></div><p class="bgroup">Health</p><div class="chips"><span class="chip">Eugica</span></div></div>
+    <div class="cm-block"><h4>Top sponsored videos by views</h4><div class="koc-grid"><figure class="koc"><img src="img/koc-comem.webp" alt="Co Mem sponsored video on Seethesheep" loading="lazy"><figcaption><b>Cỏ Mềm</b>1.8 million views</figcaption></figure><figure class="koc"><img src="img/koc-lazada.webp" alt="Lazada sponsored video on Seethesheep" loading="lazy"><figcaption><b>Lazada</b>1.4 million views</figcaption></figure><figure class="koc"><img src="img/koc-reski.webp" alt="Reski Hotpot sponsored video on Seethesheep" loading="lazy"><figcaption><b>Reski Hotpot</b>531,000 views</figcaption></figure><figure class="koc"><img src="img/koc-nescafe.webp" alt="Nescafe sponsored video on Seethesheep" loading="lazy"><figcaption><b>Nescafé</b>406,000 views</figcaption></figure><figure class="koc"><img src="img/koc-chupa.webp" alt="Chupa Chups sponsored video on Seethesheep" loading="lazy"><figcaption><b>Chupa Chups</b>235,000 views</figcaption></figure><figure class="koc"><img src="img/koc-mentos.webp" alt="Mentos sponsored video on Seethesheep" loading="lazy"><figcaption><b>Mentos</b>202,000 views</figcaption></figure></div></div>
+    <div class="cm-block"><h4>Quick takeaways</h4><ul><li>Nearly 2 brand deals a month, from Nov 2025 to Nov 2026.</li><li>Beauty is the channel's clearest strength, with 10 of 22 brands.</li><li>Many sponsored videos get more views than regular ones, thanks to products being woven into the story.</li></ul></div>
+    <p style="margin-top:6px"><a class="btn" href="https://www.tiktok.com/@seethesheep" target="_blank" rel="noopener">View the channel on TikTok</a></p>
+  </div>
+  </article>
+</section>
+
+<section class="on-maroon" id="bao-chi">
+  <div class="press-head"><span class="script-acc" aria-hidden="true">VnExpress</span><h2 class="ptitle">Press</h2></div>
+  <div class="press-facts"><span><b>90+</b>clients</span><span><b>12</b>industries</span><span><b>10</b>salespeople supported</span><span><b>VND 15M to 400M+</b> per project</span></div>
+  <p class="press-prod">Products delivered: PR articles, events, banners, social, vodcasts, subfolders, CPM ads.</p>
+  <div class="inds"><div class="ind"><p class="ind-name">Finance, banking<small>11 clients</small></p><div class="ind-chips"><span>VIB</span><span>BIDV</span><span>Eximbank</span><span>OCB</span><span>Woori Bank</span><span>Citibank</span><span>Home Credit</span><span>Cathay Bank</span><span>VinaCapital</span><span>BVBank</span><span>VietBank</span></div></div><div class="ind"><p class="ind-name">Cars, motorbikes<small>14 clients</small></p><div class="ind-chips"><span>VinFast</span><span>BYD</span><span>Porsche</span><span>Bentley</span><span>Land Rover</span><span>Volvo</span><span>Ford</span><span>Suzuki</span><span>Motul</span><span>Sailun</span><span>MOVE</span><span>Trend Moto</span><span>LAM Scooter</span><span class="more-n">and 1 more</span></div></div><div class="ind"><p class="ind-name">Education<small>13 clients</small></p><div class="ind-chips"><span>HCMC University of Technology</span><span>Ton Duc Thang University</span><span>University of Economics and Law</span><span>VGU</span><span>HCMC University of Industry and Trade</span><span>Ba Ria Vung Tau University</span><span>EEO Vietnam</span><span class="more-n">and 6 more</span></div></div><div class="ind"><p class="ind-name">Healthcare<small>12 clients</small></p><div class="ind-chips"><span>Ecogreen</span><span>Signia</span><span>City International Hospital</span><span>Phuong Nam General Hospital</span><span>Thai Minh Pharmaceuticals</span><span>Hoa Hong Dental</span><span>Gia An Hospital</span><span class="more-n">and 5 more</span></div></div><div class="ind"><p class="ind-name">Media, entertainment<small>10 clients</small></p><div class="ind-chips"><span>VPlay VTV</span><span>Bel Vietnam</span><span>OEG</span><span>Studio Sparx</span><span>Media Lab</span><span class="more-n">and 5 more</span></div></div><div class="ind"><p class="ind-name">Consumer goods, retail<small>9 clients</small></p><div class="ind-chips"><span>Calofic</span><span>Con Cung</span><span>Kun</span><span>A&amp;B Shopping Mall</span><span>Pi Tower</span><span class="more-n">and 4 more</span></div></div><div class="ind"><p class="ind-name">Insurance<small>6 clients</small></p><div class="ind-chips"><span>Manulife</span><span>Prudential</span><span>Vietnam Social Security</span><span>Insurance Association of Vietnam</span><span class="more-n">and 2 more</span></div></div><div class="ind"><p class="ind-name">Technology, power<small>6 clients</small></p><div class="ind-chips"><span>Realme</span><span>Garmin</span><span>HCMC Power Corporation</span><span>Southern Power Corporation</span><span>An Tien</span><span class="more-n">and 1 more</span></div></div><div class="ind"><p class="ind-name">Transport, aviation<small>5 clients</small></p><div class="ind-chips"><span>Vietnam Airlines</span><span>Tan Son Nhat Airport</span><span>J&amp;T Express</span><span>BEST Express</span><span>be Group</span></div></div><div class="ind"><p class="ind-name">Real estate<small>4 clients</small></p><div class="ind-chips"><span>Dat Ho Tay</span><span>GI Realty</span><span>BDB Group</span><span>Cheil</span></div></div><div class="ind"><p class="ind-name">Travel, hospitality<small>3 clients</small></p><div class="ind-chips"><span>Saigontourist</span><span>White Palace</span><span>MAI</span></div></div><div class="ind"><p class="ind-name">Conglomerate<small>1 client</small></p><div class="ind-chips"><span>Vingroup</span></div></div></div>
+  <a class="btn primary ldp-link" href="baochi-en.html">See the work</a>
+  <p class="ind-title">IMC projects on VnExpress</p>
+  <div class="press-grid two">
+    <div class="pcard"><span class="top">Aves</span><span class="txt"><b>Electric vehicles</b>A Vietnamese electric motorbike design contest.<em class="ongoing">Project in progress</em></span></div>
+    <div class="pcard"><span class="top">Long Châu</span><span class="txt"><b>Healthcare</b>A family run in Thanh Hoa.<em class="ongoing">Project in progress</em></span></div>
+  </div>
+</section>
+
+<footer class="on-maroon" id="lien-he">
+  <h2 class="ptitle">Let's build the next campaign together</h2>
+  <div class="contact">
+    <a class="btn primary" href="mailto:channy2108.work@gmail.com">Send email</a>
+    <a class="btn" href="https://www.linkedin.com/in/trany/" target="_blank" rel="noopener">LinkedIn</a>
+    <a class="btn" href="cv.pdf" download="CV_Nguyen_Kim_Trang.pdf">Download CV</a>
+  </div>
+</footer>
+</div>
+<dialog class="case-modal" id="case-lobsterbay" aria-labelledby="cm-lb-title">
+  <div class="cm-head">
+    <div><h3 id="cm-lb-title">Lobster Bay</h3><p>Seafood restaurant. Building the brand's TikTok channel.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats">
+      <div><b>30</b><span>videos</span></div>
+      <div><b>3</b><span>shooting days</span></div>
+      <div><b>55,000</b><span>followers after 3 months</span></div>
+      <div><b>17,000</b><span>likes after 3 months</span></div>
+    </div>
+    <div class="cm-block"><h4>Overview</h4><p>Led the project to build and grow Lobster Bay's TikTok channel, aiming to raise brand awareness.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><p>The brand wanted its own staff as actors, people who had never acted in front of a camera.</p></div>
+    <div class="cm-block"><h4>Solution</h4><ul>
+      <li>Met the cast with the director beforehand, then planned a shoot that suited them.</li>
+      <li>Anticipated risks, discussed them with the client and got the plan approved.</li>
+      <li>Coached the cast through each scene on set to keep the quality and emotion of the videos.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul>
+      <li>Drafted and signed the contract between both parties.</li>
+      <li>Worked directly with the client and internal team, from ideas to production.</li>
+      <li>Weekly and monthly reports on key metrics.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Result</h4><p>With appetizing seafood content, the TikTok channel made a clear impression on Lobster Bay's customers, reaching 55,000 followers and 17,000 likes in just 3 months.</p></div>
+    <div class="cm-block"><h4>Featured videos</h4>
+      <div class="cm-shots"><img src="img/lobsterbay-1.webp" alt="Lobster Bay TikTok video 1" loading="lazy"><img src="img/lobsterbay-2.webp" alt="Lobster Bay TikTok video 2" loading="lazy"><img src="img/lobsterbay-3.webp" alt="Lobster Bay TikTok video 3" loading="lazy"><img src="img/lobsterbay-4.webp" alt="Lobster Bay TikTok video 4" loading="lazy"></div>
+      <p style="margin-top:14px"><a class="btn" href="https://www.tiktok.com/@lobsterbayvn/video/7230051332831350021" target="_blank" rel="noopener">Watch on TikTok</a></p>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-vietinter" aria-labelledby="cm-vf-title">
+  <div class="cm-head">
+    <div><h3 id="cm-vf-title">Vietinter Foods</h3><p>Food. Refreshing Trust Farm packaging and the brand identity.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats deliv">
+      <div><b>Frozen meat packaging</b><span>Trust Farm</span></div>
+      <div><b>Logo and identity</b><span>Vietinter Foods</span></div>
+      <div><b>POSM materials</b><span>At point of sale</span></div>
+    </div>
+    <div class="cm-block"><h4>Overview</h4><p>Worked with Trust Farm, a Vietinter Foods brand, to refresh the packaging of its frozen meat line and make it feel closer to Vietnamese consumers. In parallel, redesigned the logo and POSM materials for Vietinter Foods.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><ul>
+      <li>The client wanted Trust Farm to stand out more to Vietnamese consumers.</li>
+      <li>It was my first time working with a very meticulous client.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Solution</h4><ul>
+      <li>Developed ideas with the creative team from Vietnamese lacquer painting, using brushstrokes and colour to create a design both distinctive and familiar to Vietnamese people.</li>
+      <li>Through our meetings, I learned to understand the client's needs correctly, then worked with the design team to deliver work that won the client over.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul>
+      <li>Drafted and signed the contract between both parties.</li>
+      <li>Worked directly with the client and internal team, from ideas to execution.</li>
+    </ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots two"><img src="img/vf-1.webp" alt="Trust Farm packaging for beef shank, chicken breast and pork ribs" loading="lazy"><img src="img/vf-4.webp" alt="Vietinter Foods office identity set" loading="lazy"><img src="img/vf-2.webp" alt="Trust Farm beef shank packaging options" loading="lazy"><img src="img/vf-3.webp" alt="Trust Farm beef shank packaging mockup" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-danhthanh" aria-labelledby="cm-danhthanh-title">
+  <div class="cm-head">
+    <div><h3 id="cm-danhthanh-title">Đảnh Thạnh</h3><p>Mineral water. A 360 degree marketing campaign to refresh the brand.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>+10%</b><span>fanpage followers after 3 months</span></div><div><b>+300,000</b><span>post engagements</span></div><div><b>+8,500,000</b><span>video views</span></div><div><b>3 times</b><span>client renewed the contract</span></div></div>
+    <div class="cm-block"><h4>Overview</h4><p>This was the first 360 degree marketing project I was given, and I learned a great deal from both the project and the client. Đảnh Thạnh is a 30 year old Vietnamese mineral water brand facing strong competition. The project aimed to refresh the brand in consumers' eyes and raise awareness among new customers.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><ul><li>The client wanted to launch right after the plan was approved and the contract signed.</li><li>The team had no time to prepare content in advance. The workload was heavy and the preparation time very short.</li></ul></div>
+    <div class="cm-block"><h4>Solution</h4><ul><li>Spent one day understanding the brand and the execution plan, and finding the right people for the project.</li><li>Worked closely with the brand team on every item to keep quality and deadlines.</li><li>Proactively learned new skills to apply to the project, which deepened my understanding of marketing.</li></ul></div>
+    <div class="cm-block"><h4>Deliverables</h4><div class="chips"><span class="chip">Facebook social posts</span><span class="chip">TikTok product videos</span><span class="chip">Facebook Ads</span><span class="chip">Google Ads</span><span class="chip">Nano KOC booking</span><span class="chip">Pages, groups</span></div></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul><li>Drafted and signed the contract between both parties.</li><li>Worked directly with the client and internal team, from ideas to execution.</li><li>Booked KOCs, pages and groups.</li><li>Weekly and monthly ad reports.</li><li>Guided visuals and content in line with the marketing plan.</li></ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots one"><img src="img/danhthanh.webp" alt="Danh Thanh, work sample 1" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-bosch" aria-labelledby="cm-bosch-title">
+  <div class="cm-head">
+    <div><h3 id="cm-bosch-title">Bosch</h3><p>Home appliances. Managing a media advertising project through a third party partner.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>212.25%</b><span>engagement against KPI</span></div><div><b>165.86%</b><span>reach against KPI</span></div><div><b>100%</b><span>of KPI achieved</span></div><div><b>3 times</b><span>client renewed the contract</span></div></div>
+    <div class="cm-block"><h4>Overview</h4><p>Bosch is one of the major clients I have had the chance to work with. I managed the media project, running ads on Bosch's platforms through a third party partner.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><ul><li>Bosch asked for detailed explanations of every metric in the media report, especially monthly comparisons between Bosch and its competitors.</li><li>Advising the client was hard at first, as my media knowledge was not yet solid.</li></ul></div>
+    <div class="cm-block"><h4>Solution</h4><ul><li>Worked closely with the media team to learn the terminology and how to run ads for different objectives.</li><li>Thanks to the media team's early support, I now advise clients on media with confidence and produce better reports.</li></ul></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul><li>Drafted and signed the contract between both parties.</li><li>Worked directly with the client and the media team, from planning to execution.</li><li>Weekly and monthly ad reports.</li></ul></div>
+    <div class="cm-block"><h4>Result</h4><ul><li>Achieved 100% of the set KPIs.</li><li>Optimized ad spend and increased company profit.</li><li>Client renewed the contract 3 times.</li></ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots one narrow"><img src="img/bosch.webp" alt="Bosch, work sample 1" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-oishi" aria-labelledby="cm-oishi-title">
+  <div class="cm-head">
+    <div><h3 id="cm-oishi-title">Oishi</h3><p>Food, snacks. Managing a media advertising project through a third party partner.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>100.29%</b><span>engagement against KPI</span></div><div><b>108.57%</b><span>reach against KPI</span></div><div><b>100%</b><span>of KPI achieved</span></div><div><b>2 times</b><span>client renewed the contract</span></div></div>
+    <div class="cm-block"><h4>Overview</h4><p>Oishi is one of the major clients I have had the chance to work with. I managed the media project, running ads on Oishi's platforms through a third party partner.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><p>A large KPI volume and tight deadlines put real pressure on me and the media team, as we had to balance cash flow while still hitting every KPI.</p></div>
+    <div class="cm-block"><h4>Solution</h4><p>Worked closely with the media team and monitored the project continuously to resolve any issue quickly during execution.</p></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul><li>Drafted and signed the contract between both parties.</li><li>Worked directly with the client and the media team, from planning to execution.</li><li>Weekly and monthly ad reports.</li></ul></div>
+    <div class="cm-block"><h4>Result</h4><ul><li>Achieved 100% of the set KPIs.</li><li>Optimized ad spend.</li><li>Client renewed the contract twice.</li></ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots two"><img src="img/oishi-1.webp" alt="Oishi, work sample 1" loading="lazy"><img src="img/oishi-2.webp" alt="Oishi, work sample 2" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+<dialog class="case-modal" id="case-blackstones" aria-labelledby="cm-blackstones-title">
+  <div class="cm-head">
+    <div><h3 id="cm-blackstones-title">Blackstones</h3><p>Funeral services. TikTok videos introducing the business.</p></div>
+    <button class="cm-close" type="button" data-close aria-label="Close">×</button>
+  </div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>200%</b><span>of KPI achieved</span></div><div><b>2 times</b><span>client renewed the contract</span></div></div>
+    <div class="cm-block"><h4>Overview</h4><p>A special case for me. Blackstones, a funeral services company, wanted TikTok videos to promote its business within the industry.</p></div>
+    <div class="cm-block"><h4>Challenge</h4><ul><li>The project was first handled by a colleague. Because of execution issues, it fell short of the contract commitments, and the client wanted to end the contract and claim compensation as agreed.</li><li>I was asked to take over as Account Lead to resolve the outstanding issues.</li></ul></div>
+    <div class="cm-block"><h4>Solution</h4><ul><li>Held a meeting to negotiate and ease the client's dissatisfaction.</li><li>Proposed extending the contract and recommitted to the number of videos and the KPIs.</li><li>Worked with the internal team to reassign roles and responsibilities.</li></ul></div>
+    <div class="cm-block"><h4>Scope of work</h4><ul><li>Drafted and signed the contract between both parties.</li><li>Worked directly with the client and the media team, from planning to execution.</li><li>Weekly and monthly ad reports.</li></ul></div>
+    <div class="cm-block"><h4>Result</h4><ul><li>Achieved 200% of the set KPIs.</li><li>Minimized losses.</li><li>Client renewed the contract twice.</li></ul></div>
+    <div class="cm-block"><h4>Work samples</h4>
+      <div class="cm-shots "><img src="img/blackstones-1.webp" alt="Blackstones, work sample 1" loading="lazy"><img src="img/blackstones-2.webp" alt="Blackstones, work sample 2" loading="lazy"><img src="img/blackstones-3.webp" alt="Blackstones, work sample 3" loading="lazy"><img src="img/blackstones-4.webp" alt="Blackstones, work sample 4" loading="lazy"></div>
+    </div>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="case-seethesheep" aria-labelledby="cm-seethesheep-title">
+  <div class="cm-head"><div><h3 id="cm-seethesheep-title">Seethesheep</h3><p>TikTok lifestyle channel. Channel management and connecting the KOC with brands.</p></div><button class="cm-close" type="button" data-close aria-label="Close">×</button></div>
+  <div class="cm-body">
+    <div class="cm-stats"><div><b>51.5K</b><span>followers</span></div><div><b>3.6M</b><span>likes</span></div><div><b>22</b><span>brand partners</span></div><div><b>1.8M</b><span>views on the top sponsored video</span></div></div>
+    <div class="cm-block"><h4>About the channel</h4><p>A lifestyle vlog about travel, beauty and everyday life, told with a funny, down to earth voice. Sponsored content is woven into everyday situations such as skits, POVs and diaries, so viewers don't feel they are watching an ad.</p></div>
+    <div class="cm-block"><h4>What I do</h4><ul><li>Advise the KOC on content direction when working with brands.</li><li>Support filming and photo shoots.</li><li>Handle contracts, acceptance and payments.</li><li>Work with partners.</li></ul></div>
+    <div class="cm-block"><h4>Brand partners</h4><p class="bgroup">Beauty and skincare</p><div class="chips"><span class="chip">Cỏ Mềm</span><span class="chip">3CE</span><span class="chip">Glamrr Q</span><span class="chip">Kiehl's</span><span class="chip">SKIN1004</span><span class="chip">Dr.G</span><span class="chip">Feld Apotheke</span><span class="chip">Surmedic</span><span class="chip">Jessup Beauty</span><span class="chip">Dememoria</span></div><p class="bgroup">Food and drink</p><div class="chips"><span class="chip">Nescafé</span><span class="chip">KitKat</span><span class="chip">Coca-Cola</span><span class="chip">Mentos</span><span class="chip">Chupa Chups</span><span class="chip">Reski Hotpot</span></div><p class="bgroup">Tech, shopping, finance</p><div class="chips"><span class="chip">Lazada</span><span class="chip">be</span><span class="chip">SkyJoy x VPBank</span><span class="chip">JBL</span><span class="chip">Hollyland</span></div><p class="bgroup">Health</p><div class="chips"><span class="chip">Eugica</span></div></div>
+    <div class="cm-block"><h4>Quick takeaways</h4><ul><li>Nearly 2 brand deals a month, from Nov 2025 to Nov 2026.</li><li>Beauty is the channel's clearest strength, with 10 of 22 brands.</li><li>Many sponsored videos get more views than regular ones, thanks to products being woven into the story.</li></ul></div>
+    <p style="margin-top:6px"><a class="btn" href="https://www.tiktok.com/@seethesheep" target="_blank" rel="noopener">View the channel on TikTok</a></p>
+  </div>
+</dialog>
+
+<dialog class="case-modal" id="case-aves" aria-labelledby="cm-aves-title">
+  <div class="cm-head"><div><h3 id="cm-aves-title">Aves</h3><p>Electric vehicles. Building awareness for a newly launched brand on VnExpress.</p></div><button class="cm-close" type="button" data-close aria-label="Close">×</button></div>
+  <div class="cm-body"><div class="cm-update"><b>Coming soon</b><p>This project is in progress. Details and results will be added once it is complete.</p></div></div>
+</dialog>
+
+<dialog class="case-modal" id="case-longchau" aria-labelledby="cm-longchau-title">
+  <div class="cm-head"><div><h3 id="cm-longchau-title">Long Châu</h3><p>Healthcare. A family run in Thanh Hoa.</p></div><button class="cm-close" type="button" data-close aria-label="Close">×</button></div>
+  <div class="cm-body"><div class="cm-update"><b>Coming soon</b><p>This project is in progress. Details and results will be added once it is complete.</p></div></div>
+</dialog>
+<script>
+const stages={
+  intro:{kicker:"Introduction",title:"Hi, I'm Trang",body:[
+    "Most people call me Channy. I graduated in E-commerce and Digital Marketing from the University of Economics and Finance, Ho Chi Minh City in 2022. Since my student days, I have wanted to try every corner of the communications industry.",
+    "So I chose a path that starts from the roots: a production house to learn how content is made, an agency to learn how to run a whole campaign, then VnExpress to see how content reaches its readers.",
+    "Now I want to bring that full perspective to the brand side, where a campaign is conceived from the start and carried through to its final results."]},
+  intern:{kicker:"Dec 2022 to Jun 2023",title:"Production House intern at Fram’us Studio",bar:[71.7,10.0],body:[
+    "As a student, beyond clubs and competitions, I wanted to understand every corner of communications. So for my first stage I joined a production house team, to learn how a short video or a TVC is made.",
+    "Here I learned to read briefs and ideas, work with directors and clients, give the right feedback, and follow progress to keep to the timeline. I came to understand how a short video is born, from idea to finished piece.",
+    "<span class='clients'><b>Clients</b><button type='button' class='chip chip-btn' data-case='lobsterbay'>Lobster Bay <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='vietinter'>Vietinter Foods <span aria-hidden='true'>+</span></button></span>"]},
+  ae:{kicker:"Jun 2023 to Aug 2024",title:"Account Executive at Mita Agency",bar:[48.3,23.4],body:[
+    "I led 6 key projects, each worth VND 1 to 2 billion, running them from start to finish:<ul class='plain'><li>Building the executive plan</li><li>Booking KOLs and press</li><li>Working with partners, freelancers and production houses</li><li>Checking storyboards, content and visuals against the brand guideline</li><li>Tracking ad data across platforms and reporting</li></ul>",
+    "This is where I learned to keep a multichannel campaign on schedule, and how to win back trust when taking over an unhappy client.",
+    "<span class='clients'><b>Clients</b><button type='button' class='chip chip-btn' data-case='danhthanh'>Đảnh Thạnh <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='bosch'>Bosch <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='oishi'>Oishi <span aria-hidden='true'>+</span></button><button type='button' class='chip chip-btn' data-case='blackstones'>Blackstones <span aria-hidden='true'>+</span></button></span>"]},
+  vne:{kicker:"Oct 2024 to present",title:"Advertising Project Coordinator at FPT Online, VnExpress",bar:[3.3,41.7],body:[
+    "I am the delivery contact for 10 salespeople, handling over 90 clients across 12 industries, from banking, cars and healthcare to aviation. Each month brings 2 to 3 large projects, plus 10 to 15 clients rolling out products.",
+    "Working directly with journalists, editors and client leaders taught me what content needs to meet press standards while still serving the brand. Following many industries at once, I also see clearly how each industry, and rival brands within it, build their communications strategies differently.",
+    "<span class='clients'><b>Recent projects</b><button type='button' class='chip chip-btn' data-case='aves'>Aves +</button><button type='button' class='chip chip-btn' data-case='longchau'>Long Châu +</button></span>"]},
+  kol:{kicker:"2025 to present",title:"Managing the Seethesheep KOL channel",bar:[3.3,36.7],body:[
+    "I manage Seethesheep, a TikTok lifestyle channel with 51,500 followers, acting as the bridge between the KOC and brand teams: advising on content direction, supporting shoots, and handling contracts, acceptance and payments.","In the past year, the channel has partnered with 22 brands including Lazada, Nescafé, Coca-Cola, 3CE and Kiehl's.",
+    "<span class='clients'><button type='button' class='chip chip-btn' data-case='seethesheep'>View details +</button></span>"]},
+  next:{kicker:"Next stage",title:"Moving to the brand side",bar:[0.0,4.0],future:true,body:[
+    "In my next stage, I want to bring the industry perspective I have built up, together with the skills and experience from every stage so far, to write a new journey with a brand.","And I hope that journey, like the ones before it, continues to be a story worth telling."]}
+};
+const labels={next:["Next stage","Brand side"],kol:["KOL management","Seethesheep"],vne:["Project coordinator","VnExpress"],ae:["Account Executive","Mita Agency"],intern:["Intern","Fram’us Studio"]};
+const rowsEl=document.getElementById('rows');
+const html=b=>b.map(t=>"<div class=p>"+t+"</div>").join("");
+Object.keys(labels).forEach(k=>{
+  const st=stages[k],[l1,l2]=labels[k];
+  const wrap=document.createElement('div');wrap.className='row-wrap';
+  const btn=document.createElement('button');
+  btn.className='row';btn.type='button';btn.dataset.key=k;btn.setAttribute('aria-pressed','false');
+  btn.innerHTML=`<span class="label">${l1}<small>${l2}</small></span><span class="track"><span class="bar${st.unknown?' unknown':''}${st.future?' future':''}" style="left:${st.bar[0]}%;width:${st.bar[1]}%"></span></span>`;
+  btn.addEventListener('click',()=>select(btn.getAttribute('aria-pressed')==='true'?'intro':k));
+  const inl=document.createElement('div');inl.className='inline-story';inl.innerHTML=html(st.body);
+  wrap.append(btn,inl);rowsEl.appendChild(wrap);
+});
+const mobile=window.matchMedia('(max-width:760px)');
+function select(k){
+  document.querySelectorAll('.row').forEach(r=>r.setAttribute('aria-pressed',r.dataset.key===k?'true':'false'));
+  if(mobile.matches&&k!=='intro')return;
+  const st=stages[k];
+  document.getElementById('story-kicker').textContent=st.kicker;
+  document.getElementById('story-title').textContent=st.title;
+  const body=document.getElementById('story-body');
+  body.className='';void body.offsetWidth;body.className='story-body-in';
+  body.innerHTML=html(st.body);
+  document.getElementById('story-reset').hidden=(k==='intro');
+}
+document.getElementById('story-reset').addEventListener('click',()=>select('intro'));
+mobile.addEventListener('change',()=>select('intro'));
+document.addEventListener('click',e=>{
+  const c=e.target.closest('[data-case]');
+  if(c){e.stopPropagation();document.getElementById('case-'+c.dataset.case).showModal();return;}
+  if(e.target.closest('[data-close]')){e.target.closest('dialog').close();return;}
+  if(e.target.tagName==='DIALOG'){e.target.close();}
+});
+select('intro');
+
+function showGroup(g,scroll){
+  document.querySelectorAll('#cong-viec .work').forEach(t=>t.setAttribute('aria-pressed',t.dataset.group===g?'true':'false'));
+  let first=true;
+  document.querySelectorAll('#case-study .cs').forEach(a=>{const on=a.dataset.group===g;a.hidden=!on;a.classList.toggle('first',on&&first);if(on){first=false;a.classList.remove('cs-anim');void a.offsetWidth;a.classList.add('cs-anim');}});
+  if(scroll&&window.matchMedia('(max-width:900px)').matches)document.getElementById('case-study').scrollIntoView({behavior:'smooth',block:'start'});
+}
+document.querySelectorAll('#cong-viec .work').forEach(t=>t.addEventListener('click',()=>showGroup(t.dataset.group,true)));
+showGroup('press',false);
+
+{const sb=document.getElementById('stickybar'),tn=document.querySelector('header .topnav');
+ const io=new IntersectionObserver(([e])=>{const on=!e.isIntersecting&&e.boundingClientRect.top<0;sb.classList.toggle('show',on);sb.setAttribute('aria-hidden',on?'false':'true');});
+ io.observe(tn);}
+</script>
+</body>
+</html>

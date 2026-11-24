@@ -320,18 +320,28 @@
     .board > *{border-radius:20px;padding:30px 18px}
     .cs-body{grid-template-columns:1fr}
   }
+  /* Chuyển ngôn ngữ */
+  .lang{display:inline-flex;flex:none;border:1.5px solid var(--maroon);border-radius:999px;overflow:hidden;font-size:.8rem;font-weight:700;letter-spacing:.06em}
+  .lang a{padding:4px 11px;color:var(--maroon);text-decoration:none}
+  .lang a:hover{background:var(--blush)}
+  .lang a[aria-current="true"]{background:var(--maroon);color:#fff}
+  @media (max-width:560px){.stickybar .lang{display:none}}
 </style>
+<link rel="alternate" hreflang="vi" href="https://channy2108work.github.io/index.html">
+<link rel="alternate" hreflang="en" href="https://channy2108work.github.io/en.html">
 </head>
 <body>
 <nav class="stickybar" id="stickybar" aria-label="Điều hướng nhanh" aria-hidden="true">
   <a class="brand" href="#">Trang Nguyễn</a>
   <div class="links"><a href="#ve-toi">Về tôi</a><a href="#ky-nang">Kỹ năng</a><a href="#cong-viec">Dự án</a><a href="#bao-chi">Báo chí</a><a href="#lien-he">Liên hệ</a></div>
+  <span class="lang" role="group" aria-label="Ngôn ngữ"><a href="index.html" lang="vi" hreflang="vi" aria-current="true">VN</a><a href="en.html" lang="en" hreflang="en">EN</a></span>
 </nav>
 <div class="board">
 <header class="panel">
   <nav class="topnav" aria-label="Điều hướng">
     <a class="brand" href="#">Trang Nguyễn</a>
     <div class="links"><a href="#ve-toi">Về tôi</a><a href="#ky-nang">Kỹ năng</a><a href="#cong-viec">Dự án</a><a href="#bao-chi">Báo chí</a><a href="#lien-he">Liên hệ</a></div>
+    <span class="lang" role="group" aria-label="Ngôn ngữ"><a href="index.html" lang="vi" hreflang="vi" aria-current="true">VN</a><a href="en.html" lang="en" hreflang="en">EN</a></span>
   </nav>
   <div class="hero">
     <h1 class="bigname"><span class="fullname">Nguyễn Kim Trang</span></h1>
@@ -380,7 +390,7 @@
   </div>
   <div class="edu">
     <p class="quals-title">Học vấn</p>
-    <ul class="ed-list"><li><span class="ed-time">2019 đến 2023</span><span class="ed-main"><b>Đại học Kinh tế Tài chính TP.HCM (UEF)</b>Thương mại điện tử, Digital Marketing. GPA 3,24/4</span></li><li><span class="ed-time">2020 đến 2023</span><span class="ed-main"><b>Chủ nhiệm Câu lạc bộ Thương mại điện tử</b>Đại học Kinh tế Tài chính TP.HCM</span></li></ul>
+    <ul class="ed-list"><li><span class="ed-time">2019 đến 2022</span><span class="ed-main"><b>Đại học Kinh tế Tài chính TP.HCM (UEF)</b>Thương mại điện tử, Digital Marketing. GPA 3,24/4</span></li><li><span class="ed-time">2020 đến 2023</span><span class="ed-main"><b>Chủ nhiệm Câu lạc bộ Thương mại điện tử</b>Đại học Kinh tế Tài chính TP.HCM</span></li></ul>
     <p class="quals-title">Thành tích</p>
     <ul class="ed-list"><li><span class="ed-time">5.2021 đến 6.2021</span><span class="ed-main"><b>Top 11 cuộc thi Digital Marketing</b>Do Company Insider tổ chức</span></li><li><span class="ed-time">12.2020 đến 5.2021</span><span class="ed-main"><b>Top 3 Nghiên cứu khoa học</b>Khoa Công nghệ thông tin, Đại học Kinh tế Tài chính TP.HCM</span></li></ul>
     <p class="quals-title">Chứng chỉ</p>
@@ -680,7 +690,7 @@
 <script>
 const stages={
   intro:{kicker:"Giới thiệu",title:"Xin chào, tôi là Trang",body:[
-    "Mọi người thường gọi tôi là Channy. Tôi học ngành Thương mại điện tử, Digital Marketing tại Đại học Kinh tế Tài chính TP.HCM. Từ thời sinh viên, tôi đã muốn thử đủ mọi ngách của nghề truyền thông.",
+    "Mọi người thường gọi tôi là Channy. Tôi tốt nghiệp ngành Thương mại điện tử, Digital Marketing tại Đại học Kinh tế Tài chính TP.HCM năm 2022. Từ thời sinh viên, tôi đã muốn thử đủ mọi ngách của nghề truyền thông.",
     "Vì vậy tôi chọn một lộ trình đi từ gốc: bắt đầu ở production house để hiểu một sản phẩm được làm ra thế nào, sang agency để học cách chạy cả một chiến dịch, rồi về VnExpress để thấy nội dung đến tay người đọc ra sao.",
     "Giờ tôi muốn mang trọn góc nhìn đó về phía thương hiệu, nơi một chiến dịch được nghĩ ra từ đầu và đi đến kết quả cuối cùng."]},
   intern:{kicker:"12.2022 đến 6.2023",title:"Thực tập sinh Production House tại Fram’us Studio",bar:[71.7,10.0],body:[

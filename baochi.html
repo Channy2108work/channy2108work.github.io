@@ -351,12 +351,20 @@
   .aw-by{font-size:.8rem;color:var(--muted)}
   @media (max-width:900px){.awards{grid-template-columns:1fr}}
   @media (max-width:480px){.award{grid-template-columns:1fr}.award img{max-width:180px}}
+  /* Chuyển ngôn ngữ */
+  .lang{display:inline-flex;flex:none;border:1.5px solid var(--maroon);border-radius:999px;overflow:hidden;font-size:.8rem;font-weight:700;letter-spacing:.06em}
+  .lang a{padding:4px 11px;color:var(--maroon);text-decoration:none}
+  .lang a:hover{background:var(--blush)}
+  .lang a[aria-current="true"]{background:var(--maroon);color:#fff}
+  @media (max-width:560px){.stickybar .lang{display:none}}
 </style>
+<link rel="alternate" hreflang="vi" href="https://channy2108work.github.io/baochi.html">
+<link rel="alternate" hreflang="en" href="https://channy2108work.github.io/baochi-en.html">
 </head>
 <body>
 <div class="board ldp-board">
 <header class="panel full ldp-hero">
-  <nav class="topnav" aria-label="Điều hướng"><a class="brand" href="index.html">Trang Nguyễn</a><div class="links"><a href="index.html#bao-chi">Quay lại trang chính</a></div></nav>
+  <nav class="topnav" aria-label="Điều hướng"><a class="brand" href="index.html">Trang Nguyễn</a><div class="links"><a href="index.html#bao-chi">Quay lại trang chính</a></div><span class="lang" role="group" aria-label="Ngôn ngữ"><a href="baochi.html" lang="vi" hreflang="vi" aria-current="true">VN</a><a href="baochi-en.html" lang="en" hreflang="en">EN</a></span></nav>
   <h1><span class="script-acc" aria-hidden="true">VnExpress</span>Sản phẩm báo chí</h1>
   <p class="lead">Những sản phẩm quảng cáo tôi đã điều phối triển khai trên VnExpress từ 10.2024 đến nay, cho hơn 90 khách hàng thuộc 12 ngành.</p>
   <div class="press-facts"><span><b>90+</b>khách hàng</span><span><b>12</b>ngành hàng</span><span><b>10</b>sale phối hợp</span><span><b>15 triệu đến 400+ triệu</b> mỗi dự án</span></div>
